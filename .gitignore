@@ -2,10 +2,10 @@ pom.xml
 pom.xml.asc
 *.jar
 *.class
-/lib/
-/classes/
-/target/
-/checkouts/
+clojure/**/lib/
+clojure/**/classes/
+clojure/**/target/
+clojure/**/checkouts/
 .lein-deps-sum
 .lein-repl-history
 .lein-plugins/
