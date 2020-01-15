@@ -12,3 +12,4 @@ clojure/**/checkouts/
 .lein-failures
 .nrepl-port
 .cpcache/
+/.idea/
