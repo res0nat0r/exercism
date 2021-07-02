@@ -11,7 +11,10 @@ and always follows normal rules regarding sentence punctuation in English.
 """
 
 function bob(stimulus)
-  flags = Dict("question" => 0x1b, "yell" => 0x10b, "empty" => 0x100b, "other" => 0x0b)
+  flags = Dict("question" => 0x1b, 
+               "yell" => 0x10b, 
+               "empty" => 0x100b, 
+               "other" => 0x0b)
 
   response = Dict(0x1b => "Sure.",
                    0x10b => "Whoa, chill out!",
