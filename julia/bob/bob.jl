@@ -21,7 +21,7 @@ function bob(stimulus)
 
   seen = 0x0b
 
-  if contains(stimulus, "?")
+  if contains(stimulus, r"\?$")
     seen |= flags["question"]
   end
 
@@ -29,7 +29,7 @@ function bob(stimulus)
     seen |= flags["yell"] 
   end
 
-  if stimulus == "" 
+  if !contains(stimulus, r"[a-zA-Z]")
     seen |= flags["empty"] 
   end
 
