@@ -22,19 +22,16 @@ function bob(stimulus)
   seen = 0x0b
 
   if contains(stimulus, "?")
-    println("question")
     seen |= flags["question"]
   end
 
-  if uppercase(stimulus) == stimulus && stimulus != ""
-    println("yell")
+  if uppercase(stimulus) == stimulus && any(isletter, stimulus)
     seen |= flags["yell"] 
   end
 
-  if stimulus == "" seen |= flags["empty"] 
-    println("empty")
+  if stimulus == "" 
+    seen |= flags["empty"] 
   end
 
   return response[seen]
-
 end
