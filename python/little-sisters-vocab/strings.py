@@ -38,8 +38,12 @@ def remove_suffix_ness(word):
     This function takes in a word and returns the base word with `ness` removed.
     """
 
-    pass
+    stripped = word.replace('ness', '')
 
+    if stripped[-1:] == 'i':
+        return stripped[:-1] + 'y'
+    else:
+        return stripped
 
 def noun_to_verb(sentence, index):
     """
