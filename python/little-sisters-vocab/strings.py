@@ -58,4 +58,5 @@ def noun_to_verb(sentence, index):
     adjective as a verb.
     """
 
-    pass
+    result = sentence.split()[index] + 'en'
+    return result.replace('.','')
