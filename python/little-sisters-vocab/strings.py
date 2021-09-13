@@ -8,8 +8,7 @@ def add_prefix_un(word):
     returns a new word with an 'un' prefix.
     """
 
-    pass
-
+    return 'un' + word
 
 def make_word_groups(vocab_words):
     """
@@ -23,7 +22,11 @@ def make_word_groups(vocab_words):
      by ' :: '.
     """
 
-    pass
+    prefix = vocab_words[0]
+    words = [ prefix + word for word in vocab_words[1:] ]
+    result = ' :: '
+
+    return prefix + ' :: ' + result.join(words)
 
 
 def remove_suffix_ness(word):
