@@ -13,3 +13,4 @@ clojure/**/checkouts/
 .nrepl-port
 .cpcache/
 **/.idea/
+**/__pycache__/
