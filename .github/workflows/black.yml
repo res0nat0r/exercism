@@ -1,10 +1,10 @@
 name: black
 
 on:
-  - pull_request
-  - open
-  - reopen
-  - synchronize
+  push:
+    branches:
+      - master
+  pull_request:
 
 jobs:
   lint:
