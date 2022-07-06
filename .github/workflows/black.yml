@@ -1,6 +1,7 @@
 name: black
 
-pull_request:
+on:
+  - pull_request
   - opened
   - reopened
   - synchronize
