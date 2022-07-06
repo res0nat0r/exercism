@@ -1,5 +1,6 @@
 from math import floor
 
+
 def exchange_money(budget, exchange_rate):
     """
 
@@ -32,8 +33,6 @@ def get_value_of_bills(denomination, number_of_bills):
     return floor(denomination * number_of_bills)
 
 
-
-
 def get_number_of_bills(budget, denomination):
     """
 
@@ -62,6 +61,7 @@ def exchangeable_value(budget, exchange_rate, spread, denomination):
 
     return d
 
+
 def non_exchangeable_value(budget, exchange_rate, spread, denomination):
     """
 
@@ -71,7 +71,7 @@ def non_exchangeable_value(budget, exchange_rate, spread, denomination):
     :param denomination: int - the value of a single bill.
     :return: int non-exchangeable value.
     """
-    
+
     spread = spread / 100
     exchange_rate = exchange_rate + (exchange_rate * spread)
     value = budget / exchange_rate
