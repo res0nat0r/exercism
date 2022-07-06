@@ -11,13 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: psf/black@stable
-
-jobs:
-  lint:
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v2
-      - uses: psf/black@stable
         with:
           options: "--check --exclude '/*_test.py'"
           src: "python"
