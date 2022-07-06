@@ -60,7 +60,6 @@ def exchangeable_value(budget, exchange_rate, spread, denomination):
     value = budget / exchange_rate
     d = int(value - (value % denomination))
 
-    print(f"################## {d} ####################")
     return d
 
 def non_exchangeable_value(budget, exchange_rate, spread, denomination):
@@ -72,5 +71,10 @@ def non_exchangeable_value(budget, exchange_rate, spread, denomination):
     :param denomination: int - the value of a single bill.
     :return: int non-exchangeable value.
     """
+    
+    spread = spread / 100
+    exchange_rate = exchange_rate + (exchange_rate * spread)
+    value = budget / exchange_rate
+    d = int(value % denomination)
 
-    pass
+    return d
