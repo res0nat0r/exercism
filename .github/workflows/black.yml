@@ -1,9 +1,10 @@
 name: black
 
 on: 
-  - push
-  - pull_request
-  - synchronize
+  pull_request:
+    - opened
+    - reopened
+    - synchronize
 
 jobs:
   lint:
