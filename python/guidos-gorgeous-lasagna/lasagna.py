@@ -4,6 +4,7 @@ Calculate how long it takes to bake a cake
 
 EXPECTED_BAKE_TIME = 40
 
+
 def bake_time_remaining(elapsed_bake_time):
     """Calculate the bake time remaining.
 
@@ -26,6 +27,7 @@ def preparation_time_in_minutes(layers):
     """
 
     return 2 * layers
+
 
 def elapsed_time_in_minutes(number_of_layers, elapsed_bake_time):
     """Calculate total prep time
