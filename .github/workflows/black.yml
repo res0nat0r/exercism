@@ -2,8 +2,8 @@ name: black
 
 on:
   - pull_request
-  - opened
-  - reopened
+  - open
+  - reopen
   - synchronize
 
 jobs:
