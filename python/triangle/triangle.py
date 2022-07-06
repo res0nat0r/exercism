@@ -17,7 +17,7 @@ def isosceles(sides):
 
 
 def scalene(sides):
-    (a,b,c)=sides
+    (a, b, c) = sides
 
     if is_triangle(sides) and (a != b != c):
         return True
