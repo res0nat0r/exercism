@@ -57,9 +57,9 @@ def exchangeable_value(budget, exchange_rate, spread, denomination):
     spread = spread / 100
     exchange_rate = exchange_rate + (exchange_rate * spread)
     value = budget / exchange_rate
-    d = int(value - (value % denomination))
+    denom = int(value - (value % denomination))
 
-    return d
+    return denom
 
 
 def non_exchangeable_value(budget, exchange_rate, spread, denomination):
@@ -75,6 +75,6 @@ def non_exchangeable_value(budget, exchange_rate, spread, denomination):
     spread = spread / 100
     exchange_rate = exchange_rate + (exchange_rate * spread)
     value = budget / exchange_rate
-    d = int(value % denomination)
+    denom = int(value % denomination)
 
-    return d
+    return denom
