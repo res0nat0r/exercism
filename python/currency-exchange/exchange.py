@@ -1,3 +1,6 @@
+"""
+Create a currency converter
+"""
 from math import floor
 
 
