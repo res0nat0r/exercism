@@ -35,7 +35,7 @@ jobs:
         run: poetry install
 
       - name: pytest
-        run: poetry run black
+        run: poetry run pytest
 
   lint:
     runs-on: ubuntu-20.04
