@@ -29,13 +29,13 @@ jobs:
         uses: actions/cache@v3.0.4
         with:
           path: ~/.cache/pypoetry
-          key: dotCache-${{ runner.os }}-${{ hashFiles('.github/workflows/pytest.yml') }}
+          key: dotCache-${{ runner.os }}-${{ hashFiles('.github/workflows/python.yml') }}-${{ hashFiles('poetry.lock') }}
 
       - name: install pytest
         run: poetry install
 
       - name: pytest
-        run: poetry run black
+        run: poetry run pytest
 
   lint:
     runs-on: ubuntu-20.04
