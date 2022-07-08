@@ -29,7 +29,7 @@ jobs:
         uses: actions/cache@v3.0.4
         with:
           path: ~/.cache/pypoetry
-          key: dotCache-${{ runner.os }}-${{ hashFiles('.github/workflows/pytest.yml') }}
+          key: dotCache-${{ runner.os }}-${{ hashFiles('.github/workflows/python.yml') }}
 
       - name: install pytest
         run: poetry install
