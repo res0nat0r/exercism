@@ -1,4 +1,4 @@
-name: pytest
+name: python
 
 on:
   push:
@@ -35,4 +35,13 @@ jobs:
         run: poetry install
 
       - name: pytest
-        run: poetry run pytest
+        run: poetry run black
+
+  lint:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: psf/black@stable
+        with:
+          options: "--check --exclude '/*_test.py'"
+          src: "python"
