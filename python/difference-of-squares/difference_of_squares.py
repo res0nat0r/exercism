@@ -1,6 +1,6 @@
 def square_of_sum(number):
-    s = sum(range(1, number + 1))
-    return s * s
+    total  = sum(range(1, number + 1))
+    return total * total
 
 
 def sum_of_squares(number):
