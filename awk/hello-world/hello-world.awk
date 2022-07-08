@@ -1,3 +1,3 @@
 #!/usr/bin/env gawk -f
 
-BEGIN {print "Goodbye, Mars!"}
+BEGIN {print "Hello, World!"}
