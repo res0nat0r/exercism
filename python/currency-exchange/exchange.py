@@ -1,5 +1,5 @@
 """
-Create a currency converter
+Create a currency converteR
 """
 from math import floor
 
