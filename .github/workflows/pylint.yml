@@ -11,7 +11,7 @@ on:
 #      - 'python/**'
 
 jobs:
-  pytest:
+  pylint:
     runs-on:
       - ubuntu-20.04
     steps:
@@ -31,7 +31,7 @@ jobs:
           path: ~/.cache/pypoetry
           key: dotCache-${{ runner.os }}-${{ hashFiles('.github/workflows/pylint.yml') }}
 
-      - name: install pytest
+      - name: install pylint
         run: poetry install
 
       - name: pylint
