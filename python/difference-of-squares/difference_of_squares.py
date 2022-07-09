@@ -1,5 +1,5 @@
 def square_of_sum(number):
-    total  = sum(range(1, number + 1))
+    total = sum(range(1, number + 1))
     return total * total
 
 
