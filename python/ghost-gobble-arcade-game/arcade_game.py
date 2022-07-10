@@ -1,3 +1,8 @@
+"""
+In this exercise, you need to implement some rules from Pac-Man, the classic 1980s-era arcade-game.
+"""
+
+
 def eat_ghost(power_pellet_active, touching_ghost):
     """
 

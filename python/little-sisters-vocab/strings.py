@@ -1,3 +1,12 @@
+"""
+You are helping your younger sister with her English vocabulary homework, which
+she's finding very tedious. Her class is learning to create new words by adding
+prefixes and suffixes. Given a set of words, the teacher is looking for
+correctly transformed words with correct spelling by adding the prefix to the
+beginning or the suffix to the ending.
+"""
+
+
 def add_prefix_un(word):
     """
 
@@ -43,8 +52,8 @@ def remove_suffix_ness(word):
 
     if stripped[-1:] == "i":
         return stripped[:-1] + "y"
-    else:
-        return stripped
+
+    return stripped
 
 
 def noun_to_verb(sentence, index):
