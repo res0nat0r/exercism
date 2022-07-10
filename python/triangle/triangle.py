@@ -51,11 +51,14 @@ def is_triangle(sides):
 
     (s_a, s_b, s_c) = sides
 
-    if (
-        (s_a + s_b >= s_c)
-        and (s_b + s_c >= s_a)
-        and (s_a + s_c >= s_b)
-        and ((s_a > 0) and (s_b > 0) and (s_c > 0))
+    if all(
+        [
+            (s_a + s_b >= s_c),
+            (s_b + s_c >= s_a),
+            (s_a + s_c >= s_b),
+            ((s_a > 0), (s_b > 0)),
+            (s_c > 0),
+        ]
     ):
         return True
 
