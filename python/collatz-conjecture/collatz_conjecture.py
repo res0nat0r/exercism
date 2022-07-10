@@ -9,21 +9,13 @@ always reach 1 eventually.
 Given a number n, return the number of steps required to reach 1.
 """
 
-
 def steps(number):
-    counter = 0
-
     if number > 0:
         while number > 0:
             if is_even(number):
                 number = number / 2
             else:
-                number = (3 * number) + 1
-        counter += 1
-
-    return counter
-
-
+                number = (number * 3) + 1
 
 
 
