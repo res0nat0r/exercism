@@ -9,17 +9,35 @@ always reach 1 eventually.
 Given a number n, return the number of steps required to reach 1.
 """
 
-def steps(number):
-    if number > 0:
-        while number > 0:
-            if is_even(number):
-                number = number / 2
-            else:
-                number = (number * 3) + 1
 
+def steps(number):
+    """Calculate number of steps in Collatz sequence
+
+    :param int number: Number to calculate
+    """
+
+    counter = 0
+
+    if number < 1:
+        raise ValueError("Only positive integers are allowed")
+
+    while number != 1:
+        if is_even(number):
+            number = number / 2
+            counter += 1
+        else:
+            number = (number * 3) + 1
+            counter += 1
+
+    return counter
 
 
 def is_even(number):
+    """Is the number even?"
+
+    :param int number: Number to calculate
+    """
+
     if number % 2 == 0:
         return True
 
