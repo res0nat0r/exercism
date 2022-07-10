@@ -1,38 +1,61 @@
-def equilateral(sides):
-    (a, b, c) = sides
+"""Determine if a triangle is equilateral, isosceles, or scalene."""
 
-    if is_triangle(sides) and (a == b == c):
+
+def equilateral(sides):
+    """Is triangle equilateral
+
+    :param array sides: Sides of triangle
+    """
+
+    (s_a, s_b, s_c) = sides
+
+    if is_triangle(sides) and (s_a == s_b == s_c):
         return True
 
     return False
 
 
 def isosceles(sides):
-    (a, b, c) = sides
+    """Is triangle isoceles
 
-    if is_triangle(sides) and ((a == b) or (b == c) or (a == c)):
+    :param array sides: Sides of triangle
+    """
+
+    (s_a, s_b, s_c) = sides
+
+    if is_triangle(sides) and ((s_a == s_b) or (s_b == s_c) or (s_a == s_c)):
         return True
 
     return False
 
 
 def scalene(sides):
-    (a, b, c) = sides
+    """Is triangle scalene
 
-    if is_triangle(sides) and (a != b != c):
+    :param array sides: Sides of triangle
+    """
+
+    (s_a, s_b, s_c) = sides
+
+    if is_triangle(sides) and (s_a != s_b != s_c):
         return True
 
     return False
 
 
 def is_triangle(sides):
-    (a, b, c) = sides
+    """Is this a triangle
+
+    :param array sides: Sides of triangle
+    """
+
+    (s_a, s_b, s_c) = sides
 
     if (
-        (a + b >= c)
-        and (b + c >= a)
-        and (a + c >= b)
-        and ((a > 0) and (b > 0) and (c > 0))
+        (s_a + s_b >= s_c)
+        and (s_b + s_c >= s_a)
+        and (s_a + s_c >= s_b)
+        and ((s_a > 0) and (s_b > 0) and (s_c > 0))
     ):
         return True
 
