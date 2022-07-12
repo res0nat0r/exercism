@@ -1,6 +1,6 @@
 # Score categories.
 # Change the values as you see fit.
-YACHT = None
+YACHT = lambda yacht: 50 if 5 == [yacht.count(i) for i in set(yacht)] else 0
 ONES = lambda dice: dice.count(1) * 1
 TWOS = lambda dice: dice.count(2) * 2
 THREES = lambda dice: dice.count(3) * 3
