@@ -1,5 +1,3 @@
 tasks:
   - name: install exercism
-    init: |
-      curl -sL https://github.com/exercism/cli/releases/download/v3.0.13/exercism-3.0.13-linux-x86_64.tar.gz -o /tmp/exercism.tar.gz &&  \
-      tar zxvf /tmp/exercism.tar.gz -C ~/.local/bin exercism && rm /tmp/exercism.tar.gz
+    init: nix profile install nixpkgs#exercism
