@@ -1,4 +1,8 @@
 tasks:
   - name: install exercism
+    before: |
+      nix profile install nixpkgs#exercism
+
+  - name: install exercism
     init: |
       nix profile install nixpkgs#exercism
