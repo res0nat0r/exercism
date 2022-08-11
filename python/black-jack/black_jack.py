@@ -4,6 +4,22 @@ How to play blackjack:    https://bicyclecards.com/how-to-play/blackjack/
 "Standard" playing cards: https://en.wikipedia.org/wiki/Standard_52-card_deck
 """
 
+cards = {
+    "A": 10,
+    "K": 10,
+    "Q": 10,
+    "10": 10,
+    "9": 9,
+    "8": 8,
+    "7": 7,
+    "6": 6,
+    "5": 5,
+    "4": 4,
+    "3": 3,
+    "2": 2,
+    "1": 1,
+}
+
 
 def value_of_card(card):
     """Determine the scoring value of a card.
@@ -39,7 +55,12 @@ def higher_card(card_one, card_two):
     3.  '2' - '10' = numerical value.
     """
 
-    pass
+    if cards[card_one] > cards[card_two]:
+        return card_one
+    elif cards[card_one] < cards[card_two]:
+        return card_two
+    else:
+        return (card_one, card_two)
 
 
 def value_of_ace(card_one, card_two):
@@ -53,7 +74,7 @@ def value_of_ace(card_one, card_two):
     3.  '2' - '10' = numerical value.
     """
 
-    pass
+    
 
 
 def is_blackjack(card_one, card_two):
