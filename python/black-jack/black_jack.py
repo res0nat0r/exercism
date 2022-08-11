@@ -16,9 +16,9 @@ def value_of_card(card):
     3.  '2' - '10' = numerical value.
     """
 
-    face_cards = ['J','Q','K']
-    ace = 'A'
-    pip = [str(i) for i in list(range(2,11))]
+    face_cards = ["J", "Q", "K"]
+    ace = "A"
+    pip = [str(i) for i in list(range(2, 11))]
 
     if card in face_cards:
         return 10
@@ -26,7 +26,8 @@ def value_of_card(card):
         return 1
     else:
         return int(card)
-    
+
+
 def higher_card(card_one, card_two):
     """Determine which card has a higher value in the hand.
 
