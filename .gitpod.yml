@@ -1,7 +1,8 @@
 tasks:
-  - name: install exercism
+  - name: install software
     before: |
       nix profile install nixpkgs#exercism
+      poetry install
 
   - name: install exercism
     init: |
