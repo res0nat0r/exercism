@@ -32,16 +32,18 @@ def value_of_card(card):
     3.  '2' - '10' = numerical value.
     """
 
-    face_cards = ["J", "Q", "K"]
-    ace = "A"
-    pip = [str(i) for i in list(range(2, 11))]
+    return cards[card]
 
-    if card in face_cards:
-        return 10
-    elif card in ace:
-        return 1
-    else:
-        return int(card)
+    # face_cards = ["J", "Q", "K"]
+    # ace = "A"
+    # pip = [str(i) for i in list(range(2, 11))]
+
+    # if card in face_cards:
+    #     return 10
+    # elif card in ace:
+    #     return 1
+    # else:
+    #     return int(card)
 
 
 def higher_card(card_one, card_two):
@@ -56,11 +58,21 @@ def higher_card(card_one, card_two):
     """
 
     if cards[card_one] > cards[card_two]:
-        return card_one
+        return str(cards[card_one])
     elif cards[card_one] < cards[card_two]:
-        return card_two
+        return str(cards[card_two])
     else:
-        return (card_one, card_two)
+        return (str(card_one), str(card_two))
+
+
+
+
+    # if cards[card_one] > cards[card_two]:
+    #     return card_one
+    # elif cards[card_one] < cards[card_two]:
+    #     return card_two
+    # else:
+    #     return (card_one, card_two)
 
 
 def value_of_ace(card_one, card_two):
@@ -73,8 +85,6 @@ def value_of_ace(card_one, card_two):
     2.  'A' (ace card) = 11 (if already in hand)
     3.  '2' - '10' = numerical value.
     """
-
-    
 
 
 def is_blackjack(card_one, card_two):
