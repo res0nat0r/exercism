@@ -1,0 +1,23 @@
+name: ruby
+
+on:
+  push:
+    paths:
+      - 'ruby/**'
+    branches:
+      - master
+  pull_request:
+    paths:
+      - 'ruby/**'
+
+jobs:
+  rubocop:
+    runs-on:
+      - ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 3.0.3
+          bundler-cache: true
+      - run: bundle exec rubocop $(git ls-files '*.rb' | grep -v '_test.rb$')
