@@ -35,7 +35,7 @@ jobs:
         run: poetry install
 
       - name: pytest
-        run: poetry run pytest
+        run: poetry run pytest $(git ls-files '*_test.py')
 
   pylint:
     runs-on:
