@@ -24,7 +24,7 @@ def concatenate_rounds(rounds_1, rounds_2):
     :param rounds_2: list - second set of rounds played.
     :return: list - all rounds played.
     """
-    return [rounds_1 + rounds_2]
+    return rounds_1 + rounds_2
 
 
 def list_contains_round(rounds, number):
@@ -55,8 +55,8 @@ def approx_average_is_average(hand):
     """
 
     average = int(sum(hand) / len(hand))
-    first_last = int( (hand[0] + hand[-1]) / 2)
-    middle =  int(len(hand)/ 2)
+    first_last = int((hand[0] + hand[-1]) / 2)
+    middle = int(len(hand) / 2)
 
     if average == first_last:
         return True
@@ -64,7 +64,6 @@ def approx_average_is_average(hand):
         return True
     else:
         return False
-    
 
 
 def average_even_is_average_odd(hand):
@@ -99,5 +98,8 @@ def maybe_double_last(hand):
     :return: list - hand with Jacks (if present) value doubled.
     """
 
-    if hand[-1] == 1:
-        return hand.append(hand.pop() * 2)
+    if hand[-1] == 11:
+        hand.append(hand.pop()*2)
+        return hand
+    else:
+        return hand
