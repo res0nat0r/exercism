@@ -71,14 +71,14 @@ def average_even_is_average_odd(hand):
 
     even_sum, even_count, odd_sum, odd_count = (0, 0, 0, 0)
 
-    for i, _ in enumerate(hand):
-        if i % 2 == 0:
-            even_sum += hand[i]
+    for iterator, card in enumerate(hand):
+        if iterator % 2 == 0:
+            even_sum += card
             even_count += 1
 
-    for i, _ in enumerate(hand):
-        if i % 2 != 0:
-            odd_sum += hand[i]
+    for iterator, card in enumerate(hand):
+        if iterator % 2 != 0:
+            odd_sum += card
             odd_count += 1
 
     return (even_sum / even_count) == (odd_sum / odd_count)
