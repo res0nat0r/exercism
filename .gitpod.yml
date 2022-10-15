@@ -1,9 +1,12 @@
 tasks:
   - name: install software
     before: |
-      nix profile install nixpkgs#exercism nixpkgs#git-extras
+      nix profile install nixpkgs#exercism nixpkgs#git-extras nixpkgs#unison-ucm
       poetry install
 
   - name: install software
     init: |
-      nix profile install nixpkgs#exercism nixpkgs#git-extras
+      nix profile install nixpkgs#exercism nixpkgs#git-extras nixpkgs#unison-ucm
+
+  - name: ucm init
+    command: ucm
