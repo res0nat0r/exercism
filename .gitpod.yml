@@ -7,3 +7,6 @@ tasks:
   - name: install software
     init: |
       nix profile install nixpkgs#exercism nixpkgs#git-extras nixpkgs#unison-ucm
+
+  - name: ucm init
+    command: ucm
