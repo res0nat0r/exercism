@@ -15,10 +15,22 @@ def classify(number):
         return "perfect"
 
 
+def memoize(f):
+    memo = {}
+
+    def helper(x):
+        if x not in memo:
+            memo[x] = f(x)
+        return memo[x]
+
+    return helper
+
+
 def factor(n, d):
     return 0 == n % d
 
 
+@memoize
 def factors(n):
     return list(filter(lambda d: n % d == 0, range(1, n)))
 
