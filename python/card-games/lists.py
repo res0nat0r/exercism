@@ -56,7 +56,7 @@ def approx_average_is_average(hand):
 
     if ((hand[0] + hand[-1]) / 2) == sum(hand) / len(hand):
         return True
-    elif sum(hand) / len(hand) == hand[int(sum(hand) / len(hand))]:
+    if sum(hand) / len(hand) == hand[int(sum(hand) / len(hand))]:
         return True
     else:
         return False
@@ -69,7 +69,22 @@ def average_even_is_average_odd(hand):
     :return: bool - are even and odd averages equal?
     """
 
-    pass
+    even_sum, even_count, odd_sum, odd_count = (0, 0, 0, 0)
+
+    for i in range(0, len(hand)):
+        if i % 2 == 0:
+            even_sum += hand[i]
+            even_count += 1
+
+    for i in range(0, len(hand)):
+        if i % 2 != 0:
+            odd_sum += hand[i]
+            odd_count += 1
+
+    if (even_sum / even_count) == (odd_sum / odd_count):
+        return True
+    else:
+        return False
 
 
 def maybe_double_last(hand):
@@ -79,4 +94,5 @@ def maybe_double_last(hand):
     :return: list - hand with Jacks (if present) value doubled.
     """
 
-    pass
+    if hand[-1] == 1:
+        return hand.append(hand.pop() * 2)
