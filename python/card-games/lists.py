@@ -81,10 +81,7 @@ def average_even_is_average_odd(hand):
             odd_sum += hand[i]
             odd_count += 1
 
-    if (even_sum / even_count) == (odd_sum / odd_count):
-        return True
-    else:
-        return False
+    return (even_sum / even_count) == (odd_sum / odd_count)
 
 
 def maybe_double_last(hand):
@@ -97,5 +94,5 @@ def maybe_double_last(hand):
     if hand[-1] == 11:
         hand.append(hand.pop() * 2)
         return hand
-    else:
-        return hand
+
+    return hand
