@@ -48,22 +48,18 @@ def card_average(hand):
 
 
 def approx_average_is_average(hand):
-    """Return if an average is using (first + last index values ) OR ('middle' card) == calculated average.
+    """Return if an average is using (first + last index values )
+    OR ('middle' card) == calculated average.
 
     :param hand: list - cards in hand.
     :return: bool - does one of the approximate averages equal the `true average`?
     """
 
-    average = int(sum(hand) / len(hand))
-    first_last = int((hand[0] + hand[-1]) / 2)
-    middle = int(len(hand) / 2)
+    middle_index = len(hand) // 2
+    middle_num = hand[middle_index]
+    first_last = (hand[0] + hand[-1]) / 2
 
-    if average == first_last:
-        return True
-    elif middle == average:
-        return True
-    else:
-        return False
+    return card_average(hand) in [first_last, middle_num]
 
 
 def average_even_is_average_odd(hand):
@@ -99,7 +95,7 @@ def maybe_double_last(hand):
     """
 
     if hand[-1] == 11:
-        hand.append(hand.pop()*2)
+        hand.append(hand.pop() * 2)
         return hand
     else:
         return hand
