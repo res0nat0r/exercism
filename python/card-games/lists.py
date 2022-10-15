@@ -34,6 +34,7 @@ def list_contains_round(rounds, number):
     :param number: int - round number.
     :return: bool - was the round played?
     """
+    return number in rounds
 
 
 def card_average(hand):
@@ -43,7 +44,7 @@ def card_average(hand):
     :return: float - average value of the cards in the hand.
     """
 
-    pass
+    return sum(hand) / len(hand)
 
 
 def approx_average_is_average(hand):
@@ -53,7 +54,12 @@ def approx_average_is_average(hand):
     :return: bool - does one of the approximate averages equal the `true average`?
     """
 
-    pass
+    if ((hand[0] + hand[-1]) / 2) == sum(hand) / len(hand):
+        return True
+    elif sum(hand) / len(hand) == hand[int(sum(hand) / len(hand))]:
+        return True
+    else:
+        return False
 
 
 def average_even_is_average_odd(hand):
