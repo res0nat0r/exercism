@@ -4,6 +4,7 @@
 def color_code(color):
     """Color codes"""
 
+    index = 0
     lookup = [
         "black",
         "brown",
@@ -17,9 +18,11 @@ def color_code(color):
         "white",
     ]
 
-    for i in range(0, len(lookup)):
+    for i, _ in enumerate(lookup):
         if lookup[i] == color:
-            return i
+            index = i
+
+    return index
 
 
 def colors():
