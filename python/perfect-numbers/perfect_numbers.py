@@ -1,3 +1,9 @@
+"""
+Determine if a number is perfect, abundant, or deficient based on Nicomachus'
+(60 - 120 CE) classification scheme for positive integers.
+"""
+
+
 def classify(number):
     """A perfect number equals the sum of its positive divisors.
 
@@ -9,43 +15,59 @@ def classify(number):
         raise ValueError("Classification is only possible for positive integers.")
     if abundant(number):
         return "abundant"
-    elif deficient(number):
+    if deficient(number):
         return "deficient"
-    elif perfect(number):
-        return "perfect"
+    # elif perfect(number):
+    return "perfect"
 
 
-def memoize(f):
+def memoize(func):
+    """Speed up factoring"""
+
     memo = {}
 
-    def helper(x):
-        if x not in memo:
-            memo[x] = f(x)
-        return memo[x]
+    def helper(tmp):
+        if tmp not in memo:
+            memo[tmp] = func(tmp)
+        return memo[tmp]
 
     return helper
 
 
-def factor(n, d):
-    return 0 == n % d
+def factor(numerator, denominator):
+    """Factor a number"""
+
+    return numerator % denominator == 0
 
 
 @memoize
-def factors(n):
-    return list(filter(lambda d: n % d == 0, range(1, n)))
+def factors(numerator):
+    """Find factors of a number"""
+
+    return list(
+        filter(lambda denominator: numerator % denominator == 0, range(1, numerator))
+    )
 
 
-def sum_factors(n):
-    return sum(factors(n))
+def sum_factors(num):
+    """Sum factors"""
+
+    return sum(factors(num))
 
 
-def abundant(n):
-    return sum_factors(n) > n
+def abundant(num):
+    """Is number abundant?"""
+
+    return sum_factors(num) > num
 
 
-def deficient(n):
-    return sum_factors(n) < n
+def deficient(num):
+    """Is number deficient?"""
+
+    return sum_factors(num) < num
 
 
-def perfect(n):
-    return sum(factors(n)) == n
+def perfect(num):
+    """Is number perfect?"""
+
+    return sum(factors(num)) == num
