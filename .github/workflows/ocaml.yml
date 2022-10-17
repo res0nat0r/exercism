@@ -11,7 +11,7 @@ on:
       - 'ocaml/**'
 
 jobs:
-  rubocop:
+  ocaml:
     runs-on:
       - ubuntu-20.04
     steps:
