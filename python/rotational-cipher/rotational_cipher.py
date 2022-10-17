@@ -4,4 +4,5 @@ def rotate(text, key):
 
     lookup = dict(zip(alphabet, cipher))
 
+    return lookup
 
