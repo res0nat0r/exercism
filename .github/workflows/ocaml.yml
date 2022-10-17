@@ -1,0 +1,20 @@
+name: ruby
+
+on:
+  push:
+    paths:
+      - 'ocaml/**'
+    branches:
+      - master
+  pull_request:
+    paths:
+      - 'ocaml/**'
+
+jobs:
+  rubocop:
+    runs-on:
+      - ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ocaml/setup-ocaml@v2
+      - run: opam exec -- dune runtest
