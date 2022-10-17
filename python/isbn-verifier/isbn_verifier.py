@@ -1,11 +1,14 @@
 """
-(d₁ * 10 + d₂ * 9 + d₃ * 8 + d₄ * 7 + d₅ * 6 + d₆ * 5 + d₇ * 4 + d₈ * 3 + d₉ * 2 + d₁₀ * 1) mod 11 == 0
+(d₁ * 10 + d₂ * 9 + d₃ * 8 + d₄ * 7 + d₅ * 6 + d₆ * 5 + d₇ * 4 + d₈ * 3 + d₉ * 2
++ d₁₀ * 1) mod 11 == 0
 """
 
 import re
 
 
 def is_valid(isbn):
+    """Verify ISBN"""
+
     if isbn == "":
         return False
 
