@@ -1,4 +1,4 @@
-name: ruby
+name: ocaml
 
 on:
   push:
