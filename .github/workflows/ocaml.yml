@@ -19,6 +19,6 @@ jobs:
       - uses: ocaml/setup-ocaml@v2
         with:
           ocaml-compiler: 4.14.0
-      - run: opam install . --deps-only --with-test
+      - run: opam install base core_kernel dune ounit qcheck
       - run: opam exec -- dune build
       - run: opam exec -- dune runtest
