@@ -13,23 +13,4 @@ on every year that is evenly divisible by 4
 open Base
 
 let leap_year year =
-    if year % 4 = 0 && year % 100 <> 0 || year % 400 = 0 then
-        true
-    else
-        false
-    
-
-
-(*
-    def leap_year(year):
-    """
-    :param year: int Year to test
-    :return: bool
-    """
-
-    if ((year % 4 == 0) and (year % 100 != 0)) or (year % 400 == 0):
-        return True
-
-    return False
-
-*)
+  if (year % 4 = 0 && year % 100 <> 0) || year % 400 = 0 then true else false
