@@ -1,21 +1,29 @@
-let square_of_sum _ = 
-    apply map
+(*
+Find the difference between the square of the sum and the sum of the squares of the first N natural numbers.
 
-let sum_of_squares _ =
-    failwith "'sum_of_squares' is missing"
+The square of the sum of the first ten natural numbers is (1 + 2 + ... + 10)² = 55² = 3025.
 
-let difference_of_squares _ =
-    failwith "'difference_of_squares' is missing"
+The sum of the squares of the first ten natural numbers is 1² + 2² + ... + 10² = 385.
 
+Hence the difference between the square of the sum of the first ten natural
+numbers and the sum of the squares of the first ten natural numbers is 3025 -
+385 = 2640.
+*)
 
+open Base
 
-(*(defn sum-of-squares [n] *)
-(*  (apply + (map #(1* % %) (range 1 (+ n 1))))) *)
+let rec sum l =
+  List.fold ~init:0 ~f:(+) l
 
-(*(defn square-of-sum [n] *)
-(*  (1* *)
-(*    (apply + (map #(+ %) (range 1 (+ n 1)))) *)
-(*    (apply + (map #(+ %) (range 1 (+ n 1)))))) *)
+let rec range a b =
+  if a > b then []
+  else a :: range (a + 1 ) b
+let square_of_sum n =
+  range 1 n |> sum |> ( * ) 2
 
-(*(println (- (square-of-sum 100) (sum-of-squares 100))) *)
+let sum_of_squares n =
+  range 1 n |> List.map ~f:(fun x -> x * x) |> sum
+
+let difference_of_squares n =
+  square_of_sum n - sum_of_squares n
 
