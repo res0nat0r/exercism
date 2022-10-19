@@ -1,0 +1,53 @@
+name: ocaml
+
+on:
+  push:
+    paths:
+      - 'ocaml/**'
+    branches:
+      - master
+  pull_request:
+    paths:
+      - 'ocaml/**'
+
+jobs:
+  ocaml:
+    runs-on:
+      - ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ocaml/setup-ocaml@v2
+        with:
+          ocaml-compiler: 4.14.0
+      - run: opam install base core_kernel dune ounit qcheck --with-doc --with-test
+      - run: opam exec -- dune runtest
+
+  lint-doc:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Use OCaml 4.13.x
+        uses: ocaml/setup-ocaml@v2
+        with:
+          ocaml-compiler: 4.14.0
+          dune-cache: true
+
+      - name: Lint doc
+        uses: ocaml/setup-ocaml/lint-doc@v2
+
+  lint-fmt:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Use OCaml 4.14.0
+        uses: ocaml/setup-ocaml@v2
+        with:
+          ocaml-compiler: 4.13.x
+          dune-cache: true
+
+      - name: Lint fmt
+        uses: ocaml/setup-ocaml/lint-fmt@v2
