@@ -25,16 +25,3 @@ let hamming_distance l r = match (l, r) with
   | (_, []) -> Error "right strand must not be empty"
   | (x, y) when List.length x <> List.length y -> Error "left and right strands must be of equal length"
   | (x,y)  -> Ok (List.zip_exn x y |> List.map ~f:distance |> List.reduce_exn ~f:(+))
-
-(* let rec list_max l =
-  match l with
-  | [] -> None
-  | h :: t -> begin
-    match list_max t with
-    | None -> Some h
-    | Some m -> Some (max h m)
-  end *)
-
-
-
-  (*  let s = List.zip_exn ~f:distance |> List.reduce ~f:(+) function *)
