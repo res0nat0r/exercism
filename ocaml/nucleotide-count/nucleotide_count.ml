@@ -13,6 +13,14 @@ val count_nucleotide : string -> char -> (int, char) Result.t
 
 val count_nucleotides : string -> (int Map.M(Char).t, char) Result.t
 
+
+
+   begin
+      let exp = Ok ((Map.of_alist_exn (module Char)) [('A', 1); ('C', 2); ('G', 3); ('T', 4)])
+      in amre exp (NC.count_nucleotides "CGTATGTCTG")
+    end;
+  ]
+
 *)
 
 open Base
