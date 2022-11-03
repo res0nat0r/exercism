@@ -10,15 +10,6 @@ on:
     paths:
       - 'haskell/**'
 
-
-name: lint
-on:
-  pull_request:
-  push:
-    branches:
-      - master
-      - 'releases/*'
-
 jobs:
   hlint:
     runs-on: ubuntu-latest
