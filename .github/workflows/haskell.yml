@@ -19,5 +19,5 @@ jobs:
       with:
         ghc-version: 9.0.2
         enable-stack: true
-        stack-version: 2.7.2
+        stack-version: 2.7.5
     - run: stack test
