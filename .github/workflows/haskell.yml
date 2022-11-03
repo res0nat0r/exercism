@@ -11,18 +11,13 @@ on:
       - 'haskell/**'
 
 jobs:
-  hlint:
-    runs-on: ubuntu-latest
+  test:
+    runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v3
-
-    - name: 'Set up HLint'
-      uses: haskell/actions/hlint-setup@v2
+    - uses: haskell/actions/setup@v2
       with:
-        version: '3.1.6'
-
-    - name: 'Run HLint'
-      uses: haskell/actions/hlint-run@v2
-      with:
-        path: src/
-        fail-on: warning
+        ghc-version: 9.0.2
+        enable-stack: true
+        stack-version: 2.7.2
+    - run: stack test
