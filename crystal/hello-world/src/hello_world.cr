@@ -1,5 +1,5 @@
 class HelloWorld
   def hello
-    "hELLO, World!"
+    "Hello, World!"
   end
 end
