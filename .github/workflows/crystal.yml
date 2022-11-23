@@ -1,0 +1,22 @@
+name: crystak
+
+on:
+  push:
+    paths:
+      - 'crystal/**'
+    branches:
+      - main
+  pull_request:
+    paths:
+      - 'crystal/**'
+
+jobs:
+  spec:
+    runs-on:
+      - ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: crystal-lang/install-crystal@1
+        with:
+          crystal: 1.6.2
+      - run: crystal spec
