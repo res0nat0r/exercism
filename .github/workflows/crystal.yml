@@ -19,8 +19,6 @@ jobs:
       - uses: crystal-lang/install-crystal@v1
         with:
           crystal: 1.6.2
-
-      - name: crystal spec
       - run: crystal spec crystal/*
 
 #   format:
