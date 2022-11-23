@@ -21,17 +21,12 @@ jobs:
           crystal: 1.6.2
       - run: crystal spec crystal/*
 
-#   format:
-#     runs-on:
-#       - ubuntu-20.04
-#     steps:
-#       - uses: actions/checkout@v2
-#       - uses: crystal-lang/install-crystal@v1
-#         with:
-#           crystal: 1.6.2
-
-#       - name: format
-#       - run: crystal tool format crystal/*/src && git diff --exit-code
-
-      
-
+  format:
+    runs-on:
+      - ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: crystal-lang/install-crystal@v1
+        with:
+          crystal: 1.6.2
+      - run: crystal tool format crystal/*/src && git diff --exit-code
