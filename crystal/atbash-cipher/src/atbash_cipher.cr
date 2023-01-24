@@ -61,7 +61,7 @@ module AtbashCipher
     encoded = [] of String
 
     message.split(//).each do |m|
-      encoded.push(ENCODE[m])
+      encoded.push(ENCODE[m.downcase])
     end
 
     return encoded.join
@@ -71,7 +71,7 @@ module AtbashCipher
     decoded = [] of String
 
     message.split(//).each do |m|
-      decoded.push(DECODE[m])
+      decoded.push(DECODE[m.downcase])
     end
 
     return decoded.join
