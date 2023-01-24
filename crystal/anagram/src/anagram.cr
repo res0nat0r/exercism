@@ -3,18 +3,15 @@ module Anagram
     s = [] of Char
     matches = [] of String
 
-    subject.each_char do |c|
-      s.push(c.downcase)
-    end
+    s = subject.split(//).map {|c| c.downcase}.sort.join
 
-    s.sort.join
+    candidates.each do |candidate|
+      c = candidate.split(//).map {|c| c.downcase}.sort.join
 
-    candidates.each do |c|
-      if s == c.downcase
-        matches.push(c)
+      if s == c 
+        matches.push(candidate)
       end
     end
 
     return matches
-  end
 end
