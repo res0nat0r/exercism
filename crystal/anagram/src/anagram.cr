@@ -16,7 +16,5 @@ module Anagram
     end
 
     return matches
-
-
   end
 end
