@@ -6,6 +6,10 @@ module Anagram
     s = subject.split(//).map {|c| c.downcase}.sort.join
 
     candidates.each do |candidate|
+      if subject.downcase == candidate.downcase
+        next
+      end
+
       c = candidate.split(//).map {|c| c.downcase}.sort.join
 
       if s == c 
