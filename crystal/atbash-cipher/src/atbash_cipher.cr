@@ -59,6 +59,7 @@ module AtbashCipher
 
   def self.encode(message : String) : String
     encoded = [] of String
+    message.chars.select {|c| c.ascii_alphanumeric?}
 
     message.split(//).each do |m|
       encoded.push(ENCODE[m.downcase])
@@ -69,6 +70,7 @@ module AtbashCipher
 
   def self.decode(message : String) : String
     decoded = [] of String
+    message.chars.select {|c| c.ascii_alphanumeric?}
 
     message.split(//).each do |m|
       decoded.push(DECODE[m.downcase])
