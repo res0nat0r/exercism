@@ -84,6 +84,6 @@ module AtbashCipher
       end
     end
 
-    return decoded.join.chars.map{|c| c}.in_groups_of(5).map(&.join).join(" ")
+    return decoded.join.chars.map{|c| c}.join
   end
 end
