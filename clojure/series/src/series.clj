@@ -1,5 +1,12 @@
 (ns series)
 
-(defn slices [string length] ;; <- arglist goes here
-  ;; your code goes here
+(defn char-to-int [input]
+  (reduce * (map #(- (int %) 48) input)))
+
+(defn slices [string length] 
+
+; (reduce max (map char-to-int (partition 3 length string)))
+(map char-to-int (partition 3 length string))
 )
+
+
