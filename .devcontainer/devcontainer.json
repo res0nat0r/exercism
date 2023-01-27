@@ -4,6 +4,7 @@
     "ghcr.io/dhoeric/features/flyctl:1": {},
     "ghcr.io/devcontainers-contrib/features/black:1": {},
     "ghcr.io/devcontainers-contrib/features/haskell:1": {},
-    "ghcr.io/eitsupi/devcontainer-features/jq-likes:0": {}
-  }
+    "ghcr.io/eitsupi/devcontainer-features/jq-likes:0": {},
+    "ghcr.io/devcontainers-contrib/features/crystal-asdf:2": { "version": "1.7.1" }
+  ,
 }
