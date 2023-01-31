@@ -1,7 +1,7 @@
 module BinarySearchTree
-    struct Node
-        property value 
-        def initialize(@value : Int)
-        end
+  class Node
+    def initialize(value : Integer)
+        @value = value
     end
+  end
 end
