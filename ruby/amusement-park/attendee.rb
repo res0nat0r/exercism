@@ -8,7 +8,7 @@ class Attendee
   end
 
   def pass_id
-    self.pass_id 
+    self.pass_id
   end
 
   def issue_pass!(pass_id)
