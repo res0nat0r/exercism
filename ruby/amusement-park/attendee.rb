@@ -4,16 +4,16 @@ class Attendee
   end
 
   def height
-    self.height
+    @height
   end
 
   def pass_id
-    self.pass_id
+    @pass_id
   end
 
   def issue_pass!(pass_id)
     @pass_id = pass_id
-    pass_id
+    @pass_id
   end
 
   def revoke_pass!

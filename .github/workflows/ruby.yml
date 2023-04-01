@@ -21,3 +21,15 @@ jobs:
           ruby-version: 3.2.1
           bundler-cache: true
       - run: bundle exec rubocop $(git ls-files '*.rb' | grep -v '_test.rb$')
+
+  test:  
+    runs-on:
+      - ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2.1
+          bundler-cache: true
+      - run: bundle exec ruby $(git ls-files '*.rb' | grep '_test.rb$')
+
