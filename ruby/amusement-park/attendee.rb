@@ -15,4 +15,4 @@ class Attendee
   def revoke_pass!
     @pass_id = nil
   end
-end
+          end
