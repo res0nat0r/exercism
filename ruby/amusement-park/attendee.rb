@@ -1,12 +1,11 @@
 # frozen_string_literal: true
 
 class Attendee
+  attr_reader :height, :pass_id
+
   def initialize(height)
     @height = height
   end
-
-  attr_reader :height
-  attr_reader :pass_id
 
   def issue_pass!(pass_id)
     @pass_id = pass_id
