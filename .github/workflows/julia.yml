@@ -32,4 +32,4 @@ jobs:
         with:
           version: 1.8.5
       - run: |
-          julia runtests.jl
+          julia $(git ls-files '*.jl' | grep runtests.jl)
