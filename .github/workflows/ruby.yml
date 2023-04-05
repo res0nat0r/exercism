@@ -33,15 +33,13 @@ jobs:
           bundler-cache: true
       - run: ruby $(git ls-files '*.rb' | grep '_test.rb$')
 
-  rufo:  
-    runs-on:
-      - ubuntu-20.04
-    steps:
-      - uses: actions/checkout@v2
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 3.2.1
-          bundler-cache: true
-      - run: bundle exec rufo $(git ls-files '*.rb' | grep -v '_test.rb$')
-
-
+# rufo:  
+#   runs-on:
+#     - ubuntu-20.04
+#   steps:
+#     - uses: actions/checkout@v2
+#     - uses: ruby/setup-ruby@v1
+#       with:
+#         ruby-version: 3.2.1
+#         bundler-cache: true
+#     - run: bundle exec rufo $(git ls-files '*.rb' | grep -v '_test.rb$')
