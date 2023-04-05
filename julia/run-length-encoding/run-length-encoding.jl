@@ -28,7 +28,7 @@ function encode(s)
         if length(r) == 1
             rle = rle * r[1]
         else
-            rle = rle * string(length(r)) * r[1]
+                                              rle = rle * string(length(r)) * r[1]
         end
     end
 
