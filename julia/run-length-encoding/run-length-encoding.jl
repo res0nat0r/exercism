@@ -21,19 +21,18 @@ count for the following character.
 using IterTools
 
 function encode(s)
-  runs = map(join, groupby(identity, s))
-  rle = ""
+    runs = map(join, groupby(identity, s))
+    rle = ""
 
-  for r in runs
-    if length(r) == 1
-      rle = rle * r[1]
-    else
-      rle = rle * string(length(r)) * r[1]
+    for r in runs
+        if length(r) == 1
+            rle = rle * r[1]
+        else
+            rle = rle * string(length(r)) * r[1]
+        end
     end
-  end
 
-  return rle
+    return rle
 end
 
-function decode(s)
-end
+function decode(s) end
