@@ -6,3 +6,6 @@ Style/Documentation:
 
 Naming/PredicateName:
   Enabled: false
+
+Style/CaseEquality:
+  Enabled: false
