@@ -16,7 +16,7 @@ jobs:
       - ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
-      - uses: julia-actions/setup-julia@1.9.2
+      - uses: julia-actions/setup-julia@v1.9.2
         with:
           version: 1.8.5
       - run: |
@@ -28,7 +28,7 @@ jobs:
       - ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
-      - uses: julia-actions/setup-julia@1.9.2
+      - uses: julia-actions/setup-julia@v1.9.2
         with:
           version: 1.8.5
       - run: |
