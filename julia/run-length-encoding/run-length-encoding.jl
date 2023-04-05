@@ -35,4 +35,7 @@ function encode(s)
     return rle
 end
 
+
+
+
 function decode(s) end
