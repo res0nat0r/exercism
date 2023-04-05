@@ -18,12 +18,21 @@ contain any numbers and numbers inside data to be decoded always represent the
 count for the following character.
 """
 
-function encode(s)
-  table = Dict()
-  
-  for i in s:
-    token = i
+using IterTools
 
+function encode(s)
+  runs = map(join, groupby(identity, s))
+  rle = ""
+
+  for r in runs
+    if length(r) == 1
+      rle = rle * r[1]
+    else
+      rle = rle * string(length(r)) * r[1]
+    end
+  end
+
+  return rle
 end
 
 function decode(s)
