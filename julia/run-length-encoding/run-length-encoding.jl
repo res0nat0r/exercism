@@ -23,7 +23,7 @@ using IterTools
 
 
 
-function encode(s)
+    function encode(s)
     runs = map(join, groupby(identity, s))
     rle = ""
 
