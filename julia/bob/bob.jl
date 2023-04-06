@@ -11,31 +11,30 @@ and always follows normal rules regarding sentence punctuation in English.
 """
 
 function bob(stimulus)
-  flags = Dict("question" => 0x1b, 
-               "yell" => 0x10b, 
-               "empty" => 0x100b, 
-               "other" => 0x0b)
+    flags = Dict("question" => 0x1b, "yell" => 0x10b, "empty" => 0x100b, "other" => 0x0b)
 
-  response = Dict(0x1b => "Sure.",
-                   0x10b => "Whoa, chill out!",
-                   0x11b => "Calm down, I know what I'm doing!",
-                   0x100b => "Fine. Be that way!",
-                   0x0b => "Whatever.")
+    response = Dict(
+        0x1b => "Sure.",
+        0x10b => "Whoa, chill out!",
+        0x11b => "Calm down, I know what I'm doing!",
+        0x100b => "Fine. Be that way!",
+        0x0b => "Whatever.",
+    )
 
-  seen = 0x0b
+    seen = 0x0b
 
-#  if contains(stimulus, r"\?$")
-  if contains(stimulus, r"\?[-\s]*$")
-    seen |= flags["question"]
-  end
+    #  if contains(stimulus, r"\?$")
+    if contains(stimulus, r"\?[-\s]*$")
+        seen |= flags["question"]
+    end
 
-  if uppercase(stimulus) == stimulus && any(isletter, stimulus)
-    seen |= flags["yell"] 
-  end
+    if uppercase(stimulus) == stimulus && any(isletter, stimulus)
+        seen |= flags["yell"]
+    end
 
-  if !contains(stimulus, r"[a-zA-Z0-9]") && !contains(stimulus, r"\?$")
-    seen |= flags["empty"] 
-  end
+    if !contains(stimulus, r"[a-zA-Z0-9]") && !contains(stimulus, r"\?$")
+        seen |= flags["empty"]
+    end
 
-  return response[seen]
+    return response[seen]
 end
