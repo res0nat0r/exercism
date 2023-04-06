@@ -15,14 +15,16 @@ jobs:
     runs-on:
       - ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
       - uses: julia-actions/setup-julia@v1.9.2
         with:
           version: 1.8.5
+
+      - uses: actions/checkout@v3
       - name: Install JuliaFormatter
-      - run: |
+        run: |
           julia -e 'using Pkg; Pkg.add(PackageSpec(name="JuliaFormatter"))'
           julia -e 'using JuliaFormatter; format(".", verbose=true)'
+
       - name: Format check
         run: |
           julia -e '
