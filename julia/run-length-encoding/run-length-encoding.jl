@@ -18,24 +18,21 @@ contain any numbers and numbers inside data to be decoded always represent the
 count for the following character.
 """
 
-using Pkg
-using IterTools
-
-Pkg.add("IterTools")
-
 function encode(s)
-    runs = map(join, groupby(identity, s))
+    re = r"(\w)\1*"
+    m = eachmatch(re, s)
     encoded = ""
 
-    for r in runs
-        if length(r) == 1
-            encoded = encoded * r[1]
-        else
-            encoded = encoded * string(length(r)) * r[1]
+        for i in m
+            if length(i.match) == 1
+                encoded = encoded * i[1]
+            else
+            encoded = encoded * (string(length(i.match)) * i[1])
+            end
         end
-    end
-
     return encoded
+ 
+
 end
 
 function decode(s)
