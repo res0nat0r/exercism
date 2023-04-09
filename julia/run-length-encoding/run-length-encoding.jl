@@ -22,26 +22,30 @@ using IterTools
 
 function encode(s)
     runs = map(join, groupby(identity, s))
-    rle = ""
+    encoded = ""
 
     for r in runs
         if length(r) == 1
-            rle = rle * r[1]
+            encoded = encoded * r[1]
         else
-            rle = rle * string(length(r)) * r[1]
+            encoded = encoded * string(length(r)) * r[1]
         end
     end
 
-    return rle
+    return encoded
 end
 
 function decode(s) 
-    re = r"(\d+)(\D+)"
+    re = r"(\d*)(\D)"
     m = eachmatch(re, s)
     decoded = ""
 
     for i in m
-        decoded = decoded * (i[2] ^ parse(Int,i[1]))
+        if i[1] == ""
+            decoded = decoded * i[2]
+        else
+            decoded = decoded * (i[2] ^ parse(Int,i[1]))
+        end
     end
 
     return decoded
