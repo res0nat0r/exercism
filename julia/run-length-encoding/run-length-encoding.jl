@@ -38,4 +38,11 @@ end
 function decode(s) 
     re = r"(\d+)(\D+)"
     m = eachmatch(re, s)
+    decoded = ""
+
+    for i in m
+        decoded = decoded * (i[2] ^ parse(Int,i[1]))
+    end
+
+    return decoded
 end
