@@ -18,7 +18,10 @@ contain any numbers and numbers inside data to be decoded always represent the
 count for the following character.
 """
 
+using Pkg
 using IterTools
+
+Pkg.add("IterTools")
 
 function encode(s)
     runs = map(join, groupby(identity, s))
