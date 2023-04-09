@@ -15,7 +15,7 @@ data, which makes it a lossless data compression.
 that the unencoded string will only contain the letters A through Z (either
 lower or upper case) and whitespace. This way data to be encoded will never
 contain any numbers and numbers inside data to be decoded always represent the
-  count for the following character.
+count for the following character.
 """
 
 using IterTools
@@ -36,5 +36,3 @@ function encode(s)
 end
 
 function decode(s) end
-
-
