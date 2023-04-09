@@ -35,7 +35,7 @@ function encode(s)
     return encoded
 end
 
-function decode(s) 
+function decode(s)
     re = r"(\d*)(\D)"
     m = eachmatch(re, s)
     decoded = ""
@@ -44,7 +44,7 @@ function decode(s)
         if i[1] == ""
             decoded = decoded * i[2]
         else
-            decoded = decoded * (i[2] ^ parse(Int,i[1]))
+            decoded = decoded * (i[2]^parse(Int, i[1]))
         end
     end
 
