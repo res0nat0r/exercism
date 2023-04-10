@@ -27,7 +27,10 @@ end
 end
 
 @testset "detects three anagrams" begin
-    @test detect_anagrams("allergy", ["gallery", "ballerina", "regally", "clergy", "largely", "leading"]) == ["gallery", "regally", "largely"]
+    @test detect_anagrams(
+        "allergy",
+        ["gallery", "ballerina", "regally", "clergy", "largely", "leading"],
+    ) == ["gallery", "regally", "largely"]
 end
 
 @testset "detects multiple anagrams with different case" begin
@@ -35,7 +38,10 @@ end
 end
 
 @testset "does not detect identical words" begin
-    @test detect_anagrams("corn", ["corn", "dark", "Corn", "rank", "CORN", "cron", "park"]) == ["cron"]
+    @test detect_anagrams(
+        "corn",
+        ["corn", "dark", "Corn", "rank", "CORN", "cron", "park"],
+    ) == ["cron"]
 end
 
 @testset "does not detect non-anagrams with identical checksum" begin
@@ -43,15 +49,18 @@ end
 end
 
 @testset "detects anagrams case-insensitively" begin
-    @test detect_anagrams("Orchestra", ["cashregister", "Carthorse", "radishes"]) == ["Carthorse"]
+    @test detect_anagrams("Orchestra", ["cashregister", "Carthorse", "radishes"]) ==
+          ["Carthorse"]
 end
 
 @testset "detects anagrams using case-insensitive subject" begin
-    @test detect_anagrams("Orchestra", ["cashregister", "carthorse", "radishes"]) == ["carthorse"]
+    @test detect_anagrams("Orchestra", ["cashregister", "carthorse", "radishes"]) ==
+          ["carthorse"]
 end
 
 @testset "detects anagrams using case-insensitive possible matches" begin
-    @test detect_anagrams("orchestra", ["cashregister", "Carthorse", "radishes"]) == ["Carthorse"]
+    @test detect_anagrams("orchestra", ["cashregister", "Carthorse", "radishes"]) ==
+          ["Carthorse"]
 end
 
 @testset "does not detect an anagram if the original word is repeated" begin
