@@ -21,22 +21,22 @@ cartesian coordinates x and y), returns the correct amount earned by a dart
 landing in that point.
 """
 
-function distance(x,y)
-  return sqrt((x*x) + (y*y))
+function distance(x, y)
+    return sqrt((x * x) + (y * y))
 end
 
 function point(p)
-  if 0 <= p <= 1
-    return 10
-  elseif 1 < p <= 5
-    return 5
-  elseif 5 < p <= 10
-    return 1
-  else
-    return 0
-  end
+    if 0 <= p <= 1
+        return 10
+    elseif 1 < p <= 5
+        return 5
+    elseif 5 < p <= 10
+        return 1
+    else
+        return 0
+    end
 end
 
-function score(x, y) 
-  return point(distance(x,y))
+function score(x, y)
+    return point(distance(x, y))
 end
