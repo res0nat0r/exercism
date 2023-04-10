@@ -13,11 +13,33 @@ on:
 jobs:
   rubocop:
     runs-on:
-      - ubuntu-20.04
+      - ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0.3
+          ruby-version: 3.2.1
           bundler-cache: true
       - run: bundle exec rubocop $(git ls-files '*.rb' | grep -v '_test.rb$')
+
+  test:  
+    runs-on:
+      - ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2.1
+          bundler-cache: true
+      - run: ruby $(git ls-files '*.rb' | grep '_test.rb$')
+
+# rufo:  
+#   runs-on:
+#     - ubuntu-20.04
+#   steps:
+#     - uses: actions/checkout@v2
+#     - uses: ruby/setup-ruby@v1
+#       with:
+#         ruby-version: 3.2.1
+#         bundler-cache: true
+#     - run: bundle exec rufo $(git ls-files '*.rb' | grep -v '_test.rb$')
