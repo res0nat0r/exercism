@@ -23,16 +23,14 @@ function encode(s)
     m = eachmatch(re, s)
     encoded = ""
 
-        for i in m
-            if length(i.match) == 1
-                encoded = encoded * i[1]
-            else
+    for i in m
+        if length(i.match) == 1
+            encoded = encoded * i[1]
+        else
             encoded = encoded * (string(length(i.match)) * i[1])
-            end
         end
+    end
     return encoded
- 
-
 end
 
 function decode(s)
