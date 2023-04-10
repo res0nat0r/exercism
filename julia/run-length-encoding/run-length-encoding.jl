@@ -19,7 +19,7 @@ count for the following character.
 """
 
 function encode(s)
-    re = r"(\w)\1*"
+    re = r"([\w ])\1*"
     m = eachmatch(re, s)
     encoded = ""
 
