@@ -3,8 +3,8 @@ class Node
 
   def initialize(value : Int32)
     @value = value
-    @left = 0
-    @right = 0
+    @left = nil
+    @right = nil
   end
 
   def value
@@ -16,14 +16,18 @@ class Node
   end
 
   def insert(value : Int32)
-    @value
+    if value <= @value
+      @left = value
+    else
+      @right = value
+    end
   end
 
-  def left(new_value : Int32)
-    if new_value < @value
-      @left = new_value
-    else
-      @left = nil
-    end
+  def left()
+    @left
+  end
+
+  def right()
+    @right
   end
 end
