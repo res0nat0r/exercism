@@ -30,6 +30,7 @@ function encode(s)
             encoded = encoded * (string(length(i.match)) * i[1])
         end
     end
+
     return encoded
 end
 
