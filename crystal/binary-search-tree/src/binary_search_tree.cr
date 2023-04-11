@@ -17,17 +17,29 @@ class Node
 
   def insert(value : Int32)
     if value <= @value
-      @left = value
+      @left = Node.new(value)
     else
-      @right = value
+      @right = Node.new(value)
     end
   end
 
-  def left()
+  def left
     @left
   end
 
-  def right()
+  def right
     @right
+  end
+
+  def search(value : Int32)
+    if value == @value
+      return self 
+    elsif value < @value
+      search(@left)
+    elsif
+      search(@right)
+    else
+      return nil 
+    end
   end
 end
