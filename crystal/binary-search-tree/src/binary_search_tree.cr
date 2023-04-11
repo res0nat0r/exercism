@@ -17,9 +17,19 @@ class Node
 
   def insert(value : Int32)
     if value <= @value
-      @left = Node.new(value)
+      left = @left
+      if left.nil?
+        @left = Node.new(value)
+      else
+        left.insert(value)
+      end
     else
-      @right = Node.new(value)
+      right = @right
+      if right.nil?
+        @right = Node.new(value)
+      else
+        right.insert(value)
+      end
     end
   end
 
@@ -32,12 +42,17 @@ class Node
   end
 
   def search(value : Int32)
-    if value <= @value
-      search(@left.value)
-    elsif value > @value
-      search(@right.value)
-    else
-      return nil
+    if @value == value
+      return self
     end
+
+    if value <= @value
+      @left.try &.search(value)
+    else
+      @right.try &.search(value)
+    end
+  end
+
+  def delete(value : Int32)
   end
 end
