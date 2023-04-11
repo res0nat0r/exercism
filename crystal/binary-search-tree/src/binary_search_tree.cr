@@ -8,7 +8,7 @@ class Node
   end
 
   def value
-    @value
+    return @value
   end
 
   def each
@@ -24,22 +24,20 @@ class Node
   end
 
   def left
-    @left
+    return @left
   end
 
   def right
-    @right
+    return @right
   end
 
   def search(value : Int32)
-    if value == @value
-      return self 
-    elsif value < @value
-      search(@left)
-    elsif
-      search(@right)
+    if value <= @value
+      search(@left.value)
+    elsif value > @value
+      search(@right.value)
     else
-      return nil 
+      return nil
     end
   end
 end
