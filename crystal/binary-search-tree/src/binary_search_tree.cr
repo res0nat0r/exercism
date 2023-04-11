@@ -1,35 +1,25 @@
-class Node
+class Node(Int32)
   include Enumerable(Int32)
 
-  def initialize(value : Int32)
-    @value = value
-    @left = nil
-    @right = nil
+  property value : Int32, left : Node(Int32)? = nil, right : Node(Int32)? = nil
+
+  def initialize(@value : Int32)
   end
 
   def value
     return @value
   end
 
-  def each
-    yield @value
+  def each(&block : Int32 ->)
   end
-
+    
   def insert(value : Int32)
     if value <= @value
       left = @left
-      if left.nil?
-        @left = Node.new(value)
-      else
-        left.insert(value)
-      end
+      left.nil? ? Node.new(value) : left.insert(value)
     else
       right = @right
-      if right.nil?
-        @right = Node.new(value)
-      else
-        right.insert(value)
-      end
+      right.nil? ? Node.new(value) : right.insert(value)
     end
   end
 
