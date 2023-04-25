@@ -15,6 +15,8 @@ function encode(input)
         output_cipher = string(output_cipher, lookup[i])
     end
 
+#    https://devdocs.io/julia~1.8/base/iterators/index#Base.Iterators.take
+
     return output_cipher
 
 end
