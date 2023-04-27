@@ -17,6 +17,7 @@ function encode(input)
 
 #    https://devdocs.io/julia~1.8/base/iterators/index#Base.Iterators.take
 
+    re = r"(...)|(.*?)"
     return output_cipher
 
 end
