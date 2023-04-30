@@ -1,23 +1,15 @@
-function encode(input)
-    input = lowercase(input)
-    plain = "abcdefghijklmnopqrstuvwxyz"
-    cipher = "zyxwvutsrqponmlkjihgfedcba"
-    output = ""
-    output_cipher = ""
+function encode(input::Char)
+    plain = "abcdefghijklmnopqrstuvwxyz1234567890"
+    cipher = "zyxwvutsrqponmlkjihgfedcba1234567890"
     lookup = Dict(zip(plain, cipher))
-    re = r"[a-z]"
 
-    for m in eachmatch(re, input)
-        output = string(output, m.match)
-    end
+    return lookup[input]
+end
 
-    for i in output
-        output_cipher = string(output_cipher, lookup[i])
-    end
+function encode(input::String)
+    clean = filter(x -> isletter(x) || isdigit(x), input) |> lowercase
+    encoded = map(encode, clean)
+    parts = Iterators.partition(encoded, 5)
 
-#    https://devdocs.io/julia~1.8/base/iterators/index#Base.Iterators.take
-
-    re = r"(...)|(.*?)"
-    return output_cipher
-
+    join([join(part) for part in parts], " ")
 end
