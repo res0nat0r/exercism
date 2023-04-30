@@ -13,3 +13,18 @@ function encode(input::String)
 
     join([join(part) for part in parts], " ")
 end
+
+
+function decode(input::Char)
+    plain = "zyxwvutsrqponmlkjihgfedcba1234567890"
+    cipher = "abcdefghijklmnopqrstuvwxyz1234567890"
+    lookup = Dict(zip(plain, cipher))
+
+    return lookup[input]
+end
+
+function decode(input::String)
+    clean = filter(x -> isletter(x) || isdigit(x), input) |> lowercase
+    encoded = map(encode, clean)
+    return encoded
+end
