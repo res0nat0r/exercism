@@ -17,4 +17,4 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: ballerina-platform/ballerina-action@master
-      - run: ballerina test --offline
+      - run: bal test --offline
