@@ -1,3 +1,3 @@
 public function hello() returns string {
-    return "hELlo, peeps!";
+    return "Hello, World!";
 }
