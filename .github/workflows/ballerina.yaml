@@ -25,6 +25,7 @@ jobs:
         with:
           dir_names: true
           files: ballerina
+          path: ballerina
 
       
       - name: ls-changed-dirs
