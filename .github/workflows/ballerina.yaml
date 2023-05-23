@@ -1,0 +1,23 @@
+name: ballerina
+
+on:
+  push:
+    paths:
+      - 'ballerina/**'
+    branches:
+      - main
+    pull_request:
+      paths:
+        - 'ballerina/**'
+
+jobs:
+  build:
+    runs-on:
+      - ubuntu-22.04
+    steps:
+        uses: actions/checkout@v1
+      - name: build
+        uses: ballerina-platform/ballerina-action@master
+        with:
+          args: 
+            build
