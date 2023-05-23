@@ -26,6 +26,7 @@ jobs:
           dir_names: "true"
           json_raw_format: "true"
           path: "./ballerina"
+          files_ignore: .github
       
       - name: ls-changed-dirs
         id: ls-changed-dirs
