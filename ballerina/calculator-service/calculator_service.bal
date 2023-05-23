@@ -6,6 +6,9 @@ import ballerina/http;
 # + operand2 - Is a float used as the second operand in an equation
 # + operator - Is a string that represents the operator
 public type Calculation record {|
+    float operand1;
+    float operand2;
+    string operator;
 |};
 
 # Add the necessary attributes to this record to include the result value and the expression.
@@ -13,6 +16,8 @@ public type Calculation record {|
 # + result - The result of the operation
 # + expression - The evaluated expression that used to calculate the result
 public type Response record {|
+    float result;
+    string expression;
 |};
 
 service / on new http:Listener(9090) {
