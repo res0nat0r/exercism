@@ -24,13 +24,13 @@ jobs:
         uses: tj-actions/changed-files@v35
         with:
           dir_names: true
-#          files: ballerina
-          path: ballerina
+          files: ballerina
+          json_raw_format: true
 
       
       - name: ls-changed-dirs
         id: ls-changed-dirs
-        run: ls ${{ steps.changed-dirs.outputs.all_changed_files }} 
+        run: cat ${{ steps.changed-dirs.outputs.all_changed_files }}  | jq .
 
 
 # jobs:
