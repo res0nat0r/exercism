@@ -24,6 +24,7 @@ jobs:
         uses: tj-actions/changed-files@v35
         with:
           dir_names: "true"
+          path: "ballerina"
       
       - name: ls-changed-dirs
         id: ls-changed-dirs

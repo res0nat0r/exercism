@@ -17,7 +17,7 @@ public type Calculation record {|
 # + expression - The evaluated expression that used to calculate the result
 public type Response record {|
             float result;
-                string expression;
+string expression;
 |};
 
 service / on new http:Listener(9090) {
