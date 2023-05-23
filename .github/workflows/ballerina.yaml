@@ -20,4 +20,5 @@ jobs:
         with:
           args: 
             build
-    working-directory: ./ballerina/calculator-service
+        env:
+          WORKING_DIR: ./ballerina/calculator-service
