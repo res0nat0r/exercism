@@ -24,7 +24,7 @@ jobs:
         uses: tj-actions/changed-files@v35
         with:
           dir_names: true
-          files: ballerina
+#          files: ballerina
           path: ballerina
 
       
