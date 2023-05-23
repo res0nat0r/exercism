@@ -16,7 +16,6 @@ jobs:
       - ubuntu-22.04
     steps:
       - uses: actions/checkout@v1
-      - name: build
       - uses: ballerina-platform/ballerina-action@master
         with:
           args: 
