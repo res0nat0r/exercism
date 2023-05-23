@@ -20,3 +20,4 @@ jobs:
         with:
           args: 
             build
+        working-directory: ./ballerina/calculator-service
