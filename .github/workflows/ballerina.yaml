@@ -23,10 +23,9 @@ jobs:
         id: changed-dirs
         uses: tj-actions/changed-files@v35
         with:
-          dir_names: "true"
-          json_raw_format: "true"
-          path: "./ballerina"
-          files_ignore: .github
+          dir_names: true
+          files: ballerina
+
       
       - name: ls-changed-dirs
         id: ls-changed-dirs
