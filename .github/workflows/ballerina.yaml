@@ -1,24 +1,26 @@
-name: ballerina
+# name: ballerina
 
-on:
-  push:
-    paths:
-      - 'ballerina/**'
-    branches:
-      - main
-  pull_request:
-    paths:
-      - 'ballerina/**'
+# on:
+#   push:
+#     paths:
+#       - 'ballerina/**'
+#     branches:
+#       - main
+#   pull_request:
+#     paths:
+#       - 'ballerina/**'
 
-jobs:
-  build:
-    runs-on:
-      - ubuntu-22.04
-    steps:
-      - uses: actions/checkout@v2
-      - uses: ballerina-platform/ballerina-action@master
-        with:
-          args: 
-            build
-        env:
-          WORKING_DIR: ./ballerina/calculator-service
+# jobs:
+#   build:
+#     runs-on:
+#       - ubuntu-22.04
+#     steps:
+#       - uses: actions/checkout@v2
+#       - uses: ballerina-platform/ballerina-action@master
+#         with:
+#           args: 
+#             build
+#         env:
+#           WORKING_DIR: ./ballerina/calculator-service
+
+# check into this: https://github.com/marketplace/actions/changed-files#examples
