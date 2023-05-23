@@ -1,14 +1,29 @@
-# name: ballerina
+name: ballerina
 
-# on:
-#   push:
-#     paths:
-#       - 'ballerina/**'
-#     branches:
-#       - main
-#   pull_request:
-#     paths:
-#       - 'ballerina/**'
+on:
+  push:
+    paths:
+      - 'ballerina/**'
+    branches:
+      - main
+  pull_request:
+    paths:
+      - 'ballerina/**'
+
+jobs:
+  changed-files:
+    runs-on:
+      - ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: changed-dirs
+        id: changed-dirs
+        uses: tj-actions/changed-files@v35
+        with:
+          dir_names: "true"
 
 # jobs:
 #   build:
@@ -23,4 +38,4 @@
 #         env:
 #           WORKING_DIR: ./ballerina/calculator-service
 
-# check into this: https://github.com/marketplace/actions/changed-files#examples
+# check into this: https://github.com/marketplace/actions/changed-files#example``s
