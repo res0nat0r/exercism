@@ -16,7 +16,7 @@ public type Calculation record {|
 # + result - The result of the operation
 # + expression - The evaluated expression that used to calculate the result
 public type Response record {|
-    float result;
+            float result;
     string expression;
 |};
 
