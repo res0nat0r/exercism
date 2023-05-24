@@ -10,6 +10,7 @@ on:
     paths:
       - 'ballerina/**'
 
+jobs:
   test:
     runs-on:
       - ubuntu-22.04
@@ -40,7 +41,6 @@ on:
 # bal format always exits zero, so cant exit with error
 # right now when a file needs formatting
 
-# jobs:
 #   format:
 #     runs-on:
 #       - ubuntu-22.04
