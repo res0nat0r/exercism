@@ -56,8 +56,8 @@ jobs:
             **/.exercism
             **/tests
       
-      - name: bal format
-        id: bal-format
+      - name: bal test
+        id: bal-test
         uses: ballerina-platform/ballerina-action@master
         with:
           args:
