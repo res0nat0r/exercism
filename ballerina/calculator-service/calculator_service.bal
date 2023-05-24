@@ -18,7 +18,7 @@ public type Response record {|
 
 service / on new http:Listener(9090) {
     resource function post calc(@http:Payload Calculation input) returns Response {
-        string expression = string `xxx${input.operand1}${input.operator}${input.operand2}`;
+        string expression = string `${input.operand1}${input.operator}${input.operand2}`;
         float result = 0.0;
 
         match input.operator {
