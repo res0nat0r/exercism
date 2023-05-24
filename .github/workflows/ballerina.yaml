@@ -38,18 +38,29 @@ jobs:
         env:
           WORKING_DIR: ${{ steps.changed-dirs.outputs.all_changed_files }}
 
+  test:
+    runs-on:
+      - ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-# jobs:
-#   build:
-#     runs-on:
-#       - ubuntu-22.04
-#     steps:
-#       - uses: actions/checkout@v2
-#       - uses: ballerina-platform/ballerina-action@master
-#         with:
-#           args: 
-#             build
-#         env:
-#           WORKING_DIR: ./ballerina/calculator-service
-
-# check into this: https://github.com/marketplace/actions/changed-files#example``s
+      - name: changed-dirs
+        id: changed-dirs
+        uses: tj-actions/changed-files@v35
+        with:
+          dir_names: true
+          files: ballerina
+          files_ignore: |
+            **/.exercism
+            **/tests
+      
+      - name: bal format
+        id: bal-format
+        uses: ballerina-platform/ballerina-action@master
+        with:
+          args:
+            test
+        env:
+          WORKING_DIR: ${{ steps.changed-dirs.outputs.all_changed_files }}
