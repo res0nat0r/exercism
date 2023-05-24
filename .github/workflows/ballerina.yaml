@@ -26,8 +26,8 @@ jobs:
           dir_names: true
           files: ballerina
           files_ignore: |
-            .exercism/**
-            tests/**
+            **/.exercism
+            **/tests
       
       - name: ls-changed-dirs
         id: ls-changed-dirs
