@@ -16,19 +16,28 @@ public type Calculation record {|
 # + result - The result of the operation
 # + expression - The evaluated expression that used to calculate the result
 public type Response record {|
-            float result;
-  string expression;
+    float result;
+    string expression;
 |};
 
 service / on new http:Listener(9090) {
     // Add HTTP resource function to accept a POST request on path '/calc'
     // The function should accept the above Calculation record as the payload and return a generic json object
-resource {
-
-        // Check for each operator '+', '-', 'x' or '*' and '/'. and do the calculation
-
-        // Convert the two operands and the expression into a string representation with no whitespace.
-
-        // Return the result as a Response with the calculation expressed as a string e.g. { result: 0.0, expression: "0+0" };
+    // Check for each operator '+', '-', 'x' or '*' and '/'. and do the calculation
+    // Convert the two operands and the expression into a string representation with no whitespace.
+    // Return the result as a Response with the calculation expressed as a string e.g. { result: 0.0, expression: "0+0" };
+    resource function post calc(@http:Payload Calculation input) returns string {
+        match input.operator {
+            "+" => {
+                var result = input.operand1 + input.operand2;
+                return result.toString();
+            }
+            "-" => {
+                return "minus";
+            }
+            _ => {
+                return "none";
+            }
+        }
     }
 }
