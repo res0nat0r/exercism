@@ -11,7 +11,7 @@ on:
       - 'ballerina/**'
 
 jobs:
-  changed-files:
+  format:
     runs-on:
       - ubuntu-22.04
     steps:
@@ -24,15 +24,19 @@ jobs:
         uses: tj-actions/changed-files@v35
         with:
           dir_names: true
-          dir_names_exclude_root: true
           files: ballerina
           files_ignore: |
             **/.exercism
             **/tests
       
-      - name: ls-changed-dirs
-        id: ls-changed-dirs
-        run: ls -ld ${{ steps.changed-dirs.outputs.all_changed_files }}
+      - name: bal format
+        id: bal-format
+        uses: ballerina-platform/ballerina-action@master
+        with:
+          args:
+            format
+        env:
+          WORKING_DIR: ${{ steps.changed-dirs.outputs.all_changed_files }}
 
 
 # jobs:
