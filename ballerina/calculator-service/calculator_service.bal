@@ -4,7 +4,7 @@ import ballerina/http;
 # + operand2 - Is a float used as the second operand in an equation
 # + operator - Is a string that represents the operator
 public type Calculation record {|
-    float operand1;
+                        float operand1;
     float operand2;
     string operator;
 |};
