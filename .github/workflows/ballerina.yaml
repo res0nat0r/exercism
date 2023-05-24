@@ -34,7 +34,7 @@ jobs:
         uses: ballerina-platform/ballerina-action@master
         with:
           args:
-            format
+            format 2>&1 | grep -q 'no changes.' || exit 1
         env:
           WORKING_DIR: ${{ steps.changed-dirs.outputs.all_changed_files }}
 
