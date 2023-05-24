@@ -10,34 +10,6 @@ on:
     paths:
       - 'ballerina/**'
 
-jobs:
-  format:
-    runs-on:
-      - ubuntu-22.04
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-
-      - name: changed-dirs
-        id: changed-dirs
-        uses: tj-actions/changed-files@v35
-        with:
-          dir_names: true
-          files: ballerina
-          files_ignore: |
-            **/.exercism
-            **/tests
-      
-      - name: bal format
-        id: bal-format
-        uses: ballerina-platform/ballerina-action@master
-        with:
-          args:
-            format 2>&1 | grep -q 'no changes.' || exit 1
-        env:
-          WORKING_DIR: ${{ steps.changed-dirs.outputs.all_changed_files }}
-
   test:
     runs-on:
       - ubuntu-22.04
@@ -64,3 +36,34 @@ jobs:
             test
         env:
           WORKING_DIR: ${{ steps.changed-dirs.outputs.all_changed_files }}
+
+# bal format always exits zero, so cant exit with error
+# right now when a file needs formatting
+
+# jobs:
+#   format:
+#     runs-on:
+#       - ubuntu-22.04
+#     steps:
+#       - uses: actions/checkout@v3
+#         with:
+#           fetch-depth: 0
+
+#       - name: changed-dirs
+#         id: changed-dirs
+#         uses: tj-actions/changed-files@v35
+#         with:
+#           dir_names: true
+#           files: ballerina
+#           files_ignore: |
+#             **/.exercism
+#             **/tests
+      
+#       - name: bal format
+#         id: bal-format
+#         uses: ballerina-platform/ballerina-action@master
+#         with:
+#           args:
+#             format
+#         env:
+#           WORKING_DIR: ${{ steps.changed-dirs.outputs.all_changed_files }}
