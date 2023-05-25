@@ -1,5 +1,6 @@
 import ballerina/http;
 import ballerina/io;
+
 // Use the following endpoints to send HTTP GET request to get quotes
 
 // This is an existing endpoint (which will be automatically spawned by the test framework)
@@ -13,23 +14,18 @@ public function main() returns error? {
     // Invocation returns a 'union type' which can either be an 'string' type or an 'error' type.
     // Assign it to variable.
 
-    http:Response r = check brainyQuoteClient->/;
+    string|error brainy = check brainyQuoteClient->/;
 
     // Use type-guard to handle when the response is
     // 1. string
     // 2. error
     // For case with string, you need to print it the console (io:println)
     // For error case, print the error message to the console (io:println)
-
-    match r {
-        _ => {
-            io:println(r);
-        }
-    }
-
-
+    io:println(brainy);
 
     // Similarly implement the same logic for the invocation of the `legacyClient` endpoint
+    string|error legacy = check legacyClient->/;
 
     // Finally, use the `check` expression when retrieving the response from the `legacyClient` endpoint
+    io:println(legacy);
 }
