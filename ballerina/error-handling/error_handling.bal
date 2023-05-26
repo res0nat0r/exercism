@@ -15,17 +15,27 @@ public function main() returns error? {
     // Assign it to variable.
 
     string|error brainy = check brainyQuoteClient->/;
+    string|error legacy = check legacyClient->/;
 
     // Use type-guard to handle when the response is
     // 1. string
     // 2. error
     // For case with string, you need to print it the console (io:println)
     // For error case, print the error message to the console (io:println)
-    io:println(brainy);
+    if brainy is error {
+        io:println(brainy.message());
+    } else {
+        io:println(brainy);
+    }
 
     // Similarly implement the same logic for the invocation of the `legacyClient` endpoint
-    string|error legacy = check legacyClient->/;
+
+    if legacy is error {
+        io:println(legacy.message());
+    } else {
+        io:println(legacy);
+    }
 
     // Finally, use the `check` expression when retrieving the response from the `legacyClient` endpoint
-    io:println(legacy);
+
 }
