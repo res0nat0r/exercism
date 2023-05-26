@@ -14,8 +14,8 @@ public function main() returns error? {
     // Invocation returns a 'union type' which can either be an 'string' type or an 'error' type.
     // Assign it to variable.
 
-    string|error brainy = check brainyQuoteClient->/;
-    string|error legacy = check legacyClient->/;
+    string|error brainy = check brainyQuoteClient->get("/");
+    string|error legacy = check legacyClient->get("/");
 
     // Use type-guard to handle when the response is
     // 1. string
