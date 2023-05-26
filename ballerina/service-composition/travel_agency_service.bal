@@ -15,16 +15,19 @@ service /travel on new http:Listener(9090) {
 
     // First, define a resource method to arrange a tour, that accepts `POST` requests in the path `/arrangeTour`.
     // This resource should accept a value of the type `TourArrangement` that already defined below.
-    resource function post arrangeTour(@http:Payload TourArrangement tour) returns error? {
+    resource function post arrangeTour(@http:Payload TourArrangement tour) returns http:BadRequest|error {
         Reservation reservation = {
             name: tour.name,
             arrivalDate: tour.arrivalDate,
             departureDate: tour.departureDate,
-            preference: "",
+            preference: ""
         };
 
         http:Response r = check airlineReservationEP->post("/reserve", message = reservation);
-        io:println(r.getTextPayload());
+        if r is error {
+            return http:BAD_REQUEST;
+        }
+
 
     }
 
