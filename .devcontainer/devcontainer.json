@@ -1,0 +1,24 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/ballerina-sdkman:2": {
+      "version": "2201.6.0"
+    },
+    "ghcr.io/devcontainers-contrib/features/clojure-asdf:2": {
+      "version": "1.10.0"
+    },
+    "ghcr.io/devcontainers-contrib/features/crystal-asdf:2": {
+      "elixirVersion": "v1.15.2",
+      "erlangVersion": "26.0.2"
+    },
+    "ghcr.io/devcontainers-contrib/features/haskell:2": {
+      "ghcVersion": "9.4.1"
+    },
+    "ghcr.io/eitsupi/devcontainer-features/julia:0": {
+      "version": "1.9.1"
+    },
+    "ghcr.io/devcontainers-contrib/features/ocaml-asdf:2": {
+      "version": "5.0.0"
+    }
+  }
+}
