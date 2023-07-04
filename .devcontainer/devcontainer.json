@@ -2,7 +2,7 @@
   "image": "mcr.microsoft.com/devcontainers/universal:2",
   "features": {
     "ghcr.io/devcontainers-contrib/features/ballerina-sdkman:2": {
-      "version": "2201.6.0"
+      "version": "2201.6.0 (Swan Lake Update 6)"
     },
     "ghcr.io/devcontainers-contrib/features/clojure-asdf:2": {
       "version": "1.10.0"
