@@ -11,6 +11,8 @@
     "ghcr.io/rocker-org/devcontainer-features/r-rig:1": { "version": "4.2.3" },
     "ghcr.io/devcontainers/features/ruby:1": { "version": "3.2.1" },
     "ghcr.io/devcontainers/features/rust:1": { "version": "1.70.0" },
-    "ghcr.io/devcontainers-contrib/features/haskell:2": { "ghcVersion": "9.0.2" }
+    "ghcr.io/devcontainers-contrib/features/haskell:2": { "ghcVersion": "9.0.2" },
+    "ghcr.io/devcontainers-contrib/features/exercism-cli:1": {},
+    "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": { "packages": "tig, entr, git-extras" }
   }
 }
