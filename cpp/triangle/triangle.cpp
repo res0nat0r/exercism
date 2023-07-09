@@ -1,5 +1,9 @@
 #include "triangle.h"
 
 namespace triangle {
-
-}  // namespace triangle
+    struct triangle {
+        int a;
+        int b;
+        int c;
+    };
+}
