@@ -13,6 +13,7 @@ pkgs.mkShell {
     ruby_3_2
     cargo
     rustc
+    R
     haskell.compiler.native-bignum.ghc928
     stack
     gnat
