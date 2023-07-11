@@ -17,7 +17,7 @@ pkgs.mkShell {
     stack
     gnat
     cmake
-
+    unison-ucm
     exercism
     diff-so-fancy
     tig
