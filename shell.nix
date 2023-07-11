@@ -15,6 +15,8 @@ pkgs.mkShell {
     rustc
     haskell.compiler.native-bignum.ghc928
     stack
+    gnat
+    cmake
 
     exercism
     diff-so-fancy
