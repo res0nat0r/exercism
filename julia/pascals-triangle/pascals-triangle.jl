@@ -9,29 +9,33 @@
 # pCq =pCq-1 + p-1Cq-1 
 
 # function triangle(n)
+#   pascal = []
 #   max = 0
 
 #   while max <= n
+#       list = []
 #     for row = 0:max
-#       #print("[" * string(row) * " " * string(n) * "]")
-#       print(binomial(max, row))
-#       print(" ")
+#       append!(list, (binomial(max, row)))
 #     end
+#     print(list)
 #     print("\n")
+#     push!(pascal, list)
 #     max += 1
 #   end
+#   print(pascal)
 # end
 
 function triangle(n)
   pascal = []
   max = 0
 
-  while max <= n
-    for row = 0:max
+  while max < n
       list = []
+    for row = 0:max
       append!(list, (binomial(max, row)))
-      append!(pascal, list)
     end
+    push!(pascal, list)
     max += 1
   end
+  return pascal
 end
