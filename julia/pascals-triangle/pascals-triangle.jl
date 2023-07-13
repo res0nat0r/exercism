@@ -11,10 +11,10 @@
 function triangle(n)
   max = 0
 
-  while max < n
-    for row = 0:max+1
-      #   print("[" * string(row) * " " * string(n) * "]")
-      print(binomial(n, row))
+  while max <= n
+    for row = 0:max
+      #print("[" * string(row) * " " * string(n) * "]")
+      print(binomial(max, row))
       print(" ")
     end
     print("\n")
