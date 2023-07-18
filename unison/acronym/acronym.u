@@ -1,2 +1,5 @@
 acronym.abbreviate : Text -> Text
 acronym.abbreviate test = todo "implement abbreviate function"
+
+list acronym.abbreviate = do
+    res = List.map List.head |> (toCharlist input)
