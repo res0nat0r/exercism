@@ -23,6 +23,8 @@ abb sentence =
 > segmentBy (Boolean.not << isWhitespace) "Stef is cool" |> List.head
 -}
 
-acronym.abbreviate : Text -> Optional Text
+acronym.abbreviate : Text -> Text
 acronym.abbreviate sentence =
-    segmentBy (Boolean.not << isWhitespace) sentence |> List.head
+    segmentBy (Boolean.not << isWhitespace) sentence 
+        |> List.map (Text.take 1)
+        |> Text.join ""
