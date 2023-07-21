@@ -1,5 +1,28 @@
-acronym.abbreviate : Text -> Text
-acronym.abbreviate test = todo "implement abbreviate function"
+-- acronym.abbreviate test = todo "implement abbreviate function"
 
-list acronym.abbreviate = do
-    res = List.map List.head |> (toCharlist input)
+-- acronym.abbreviate = do
+--     res = List.map List.head |> (toCharlist input)
+
+-- > List.head [10,3,4]
+
+
+{-
+acronym.abbreviate : Text -> Text
+acronym.abbreviate sentence =
+    List.head (toCharList sentence)
+
+> toCharList "Stef"
+
+> List.head (toCharList "Stef")
+
+abb : Text -> [Text]
+abb sentence =
+    segmentBy (Boolean.not << isWhitespace) sentence << List.head
+
+
+> segmentBy (Boolean.not << isWhitespace) "Stef is cool" |> List.head
+-}
+
+acronym.abbreviate : Text -> Optional Text
+acronym.abbreviate sentence =
+    segmentBy (Boolean.not << isWhitespace) sentence |> List.head
