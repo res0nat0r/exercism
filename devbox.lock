@@ -1,0 +1,117 @@
+{
+  "lockfile_version": "1",
+  "packages": {
+    "R@latest": {
+      "last_modified": "2023-07-25T23:32:12Z",
+      "resolved": "github:NixOS/nixpkgs/a9b47d85504bdd199e90846622c76aa0bfeabfac#R",
+      "source": "devbox-search",
+      "version": "4.3.1"
+    },
+    "ballerina@latest": {
+      "last_modified": "2023-07-25T23:32:12Z",
+      "resolved": "github:NixOS/nixpkgs/a9b47d85504bdd199e90846622c76aa0bfeabfac#ballerina",
+      "source": "devbox-search",
+      "version": "2201.6.0"
+    },
+    "cargo@latest": {
+      "last_modified": "2023-07-25T23:32:12Z",
+      "resolved": "github:NixOS/nixpkgs/a9b47d85504bdd199e90846622c76aa0bfeabfac#cargo",
+      "source": "devbox-search",
+      "version": "1.70.0"
+    },
+    "clojure@latest": {
+      "last_modified": "2023-07-25T23:32:12Z",
+      "resolved": "github:NixOS/nixpkgs/a9b47d85504bdd199e90846622c76aa0bfeabfac#clojure",
+      "source": "devbox-search",
+      "version": "1.11.1.1347"
+    },
+    "cmake@latest": {
+      "last_modified": "2023-07-25T23:32:12Z",
+      "resolved": "github:NixOS/nixpkgs/a9b47d85504bdd199e90846622c76aa0bfeabfac#cmake",
+      "source": "devbox-search",
+      "version": "3.26.4"
+    },
+    "crystal@latest": {
+      "last_modified": "2023-07-25T23:32:12Z",
+      "resolved": "github:NixOS/nixpkgs/a9b47d85504bdd199e90846622c76aa0bfeabfac#crystal",
+      "source": "devbox-search",
+      "version": "1.9.0"
+    },
+    "elixir@latest": {
+      "last_modified": "2023-07-25T23:32:12Z",
+      "resolved": "github:NixOS/nixpkgs/a9b47d85504bdd199e90846622c76aa0bfeabfac#elixir",
+      "source": "devbox-search",
+      "version": "1.14.5"
+    },
+    "exercism@latest": {
+      "last_modified": "2023-05-07T06:59:10Z",
+      "resolved": "github:NixOS/nixpkgs/eb751d65225ec53de9cf3d88acbf08d275882389#exercism",
+      "source": "devbox-search",
+      "version": "3.1.0"
+    },
+    "ghc@9.2.8": {
+      "last_modified": "2023-07-25T23:32:12Z",
+      "plugin_version": "0.0.1",
+      "resolved": "github:NixOS/nixpkgs/a9b47d85504bdd199e90846622c76aa0bfeabfac#ghc",
+      "source": "devbox-search",
+      "version": "9.2.8"
+    },
+    "gnat@latest": {
+      "last_modified": "2023-07-25T23:32:12Z",
+      "resolved": "github:NixOS/nixpkgs/a9b47d85504bdd199e90846622c76aa0bfeabfac#gnat",
+      "source": "devbox-search",
+      "version": "12.3.0"
+    },
+    "julia@latest": {
+      "last_modified": "2023-07-25T23:32:12Z",
+      "resolved": "github:NixOS/nixpkgs/a9b47d85504bdd199e90846622c76aa0bfeabfac#julia",
+      "source": "devbox-search",
+      "version": "1.9.2"
+    },
+    "leiningen@latest": {
+      "last_modified": "2023-05-07T06:59:10Z",
+      "resolved": "github:NixOS/nixpkgs/eb751d65225ec53de9cf3d88acbf08d275882389#leiningen",
+      "source": "devbox-search",
+      "version": "2.10.0"
+    },
+    "ocaml@latest": {
+      "last_modified": "2023-05-07T06:59:10Z",
+      "resolved": "github:NixOS/nixpkgs/eb751d65225ec53de9cf3d88acbf08d275882389#ocaml",
+      "source": "devbox-search",
+      "version": "4.14.1"
+    },
+    "python310Full@latest": {
+      "last_modified": "2023-07-25T23:32:12Z",
+      "plugin_version": "0.0.1",
+      "resolved": "github:NixOS/nixpkgs/a9b47d85504bdd199e90846622c76aa0bfeabfac#python310Full",
+      "source": "devbox-search",
+      "version": "3.10.12"
+    },
+    "ruby_3_2@latest": {
+      "last_modified": "2023-07-25T23:32:12Z",
+      "plugin_version": "0.0.1",
+      "resolved": "github:NixOS/nixpkgs/a9b47d85504bdd199e90846622c76aa0bfeabfac#ruby_3_2",
+      "source": "devbox-search",
+      "version": "3.2.2"
+    },
+    "rustc@latest": {
+      "last_modified": "2023-07-25T23:32:12Z",
+      "plugin_version": "0.0.1",
+      "resolved": "github:NixOS/nixpkgs/a9b47d85504bdd199e90846622c76aa0bfeabfac#rustc",
+      "source": "devbox-search",
+      "version": "1.70.0"
+    },
+    "stack@latest": {
+      "last_modified": "2023-05-07T06:59:10Z",
+      "resolved": "github:NixOS/nixpkgs/eb751d65225ec53de9cf3d88acbf08d275882389#stack",
+      "source": "devbox-search",
+      "version": "2.9.1"
+    },
+    "unison-ucm@latest": {
+      "last_modified": "2023-07-25T23:32:12Z",
+      "resolved": "github:NixOS/nixpkgs/a9b47d85504bdd199e90846622c76aa0bfeabfac#unison-ucm",
+      "source": "devbox-search",
+      "version": "1.0.M5b-alpha"
+    }
+  }
+}

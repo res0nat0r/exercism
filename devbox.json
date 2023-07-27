@@ -1,0 +1,32 @@
+{
+  "packages": [
+    "ballerina@latest",
+    "clojure@latest",
+    "leiningen@latest",
+    "elixir@latest",
+    "ocaml@latest",
+    "crystal@latest",
+    "julia@latest",
+    "python310Full@latest",
+    "ruby_3_2@latest",
+    "cargo@latest",
+    "rustc@latest",
+    "R@latest",
+    "stack@latest",
+    "gnat@latest",
+    "cmake@latest",
+    "unison-ucm@latest",
+    "exercism@latest",
+    "ghc@9.2.8"
+  ],
+  "shell": {
+    "init_hook": [
+      "echo 'Welcome to devbox!' > /dev/null"
+    ],
+    "scripts": {
+      "test": [
+        "echo \"Error: no test specified\" && exit 1"
+      ]
+    }
+  }
+}
