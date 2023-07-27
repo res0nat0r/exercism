@@ -1,6 +1,6 @@
-{ pkgs ? import <nixpkgs> { } }:
+{ nixpkgs ? import <unstable> { } }:
 
-pkgs.mkShell {
+with nixpkgs; mkShell {
   nativeBuildInputs = with pkgs; [
     ballerina
     clojure
