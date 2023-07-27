@@ -22,6 +22,5 @@ with nixpkgs; mkShell {
     exercism
     diff-so-fancy
     tig
-    vim
   ];
 }
