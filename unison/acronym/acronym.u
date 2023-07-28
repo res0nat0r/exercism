@@ -4,27 +4,3 @@ acronym.abbreviate sentence =
         |> List.map (Text.take 1)
         |> Text.join ""
         |> Text.toUppercase
-
-
-abbrev : Text -> Text
-abbrev sentence =
-    Pattern.drop (some (chars "_-")) sentence
-
-
-
--- > Pattern.drop (some (chars "[_-]")) "S_-tef'"
--- > List.map (isMatch patterns.punctuation) ["s","_","t","e"]
--- > captures (sepMany patterns.puncuation (capture (some wordChar))) "the quick-browen_fox."
-
-
--- lib.base.Text.patterns
-s ="Complementary metal-oxide semiconductor"
-other = Pattern.run (capture (many (charIn (toCharList "_-"))))
---p = sepMany (many space) (capture (some (patterns.letter + patterns.punctuation + other)))
-
--- -> Pattern.run p s
-
-
-xx = capture (many (charIn (toCharList "_-")))
->Pattern.run xx "S_te-f"
-
