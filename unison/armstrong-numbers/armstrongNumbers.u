@@ -1,3 +1,10 @@
 armstrongNumbers.isArmstrongNumber : Nat -> Boolean
-armstrongNumbers.isArmstrongNumber number =
-  todo "implement isArmstrongNumber"
+armstrongNumbers.isArmstrongNumber number 
+
+
+
+{-
+(defn armstrong? [num] 
+  (== num (reduce + (map #(Math/pow % (count (str num))) (split-number num))))
+)
+-}
