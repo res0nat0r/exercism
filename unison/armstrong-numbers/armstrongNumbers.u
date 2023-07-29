@@ -1,5 +1,14 @@
-armstrongNumbers.isArmstrongNumber : Nat -> Boolean
-armstrongNumbers.isArmstrongNumber number 
+--armstrongNumbers.isArmstrongNumber : Nat -> Boolean
+--armstrongNumbers.isArmstrongNumber number 
+
+
+
+l = Nat.toText 3345 |> toCharList |> indexed 
+>l
+
+> List.foreach l (x -> List.at(0) x)
+
+
 
 
 
