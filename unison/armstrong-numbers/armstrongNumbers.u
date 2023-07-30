@@ -3,10 +3,11 @@
 
 
 
-l = Nat.toText 3345 |> toCharList |> indexed 
->l
+tmp.l = Nat.toText 3345 |> toCharList |> indexed 
 
-> List.foreach l (x -> List.at(0) x)
+> tmp.l |> List.head |> Optional.map emit
+
+--> toList! '(foreach_ (x -> List.at 0 x) l)
 
 
 
