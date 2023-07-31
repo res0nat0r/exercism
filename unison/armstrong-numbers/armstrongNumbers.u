@@ -6,12 +6,10 @@
 tmp.l = Nat.toText 3345 |> toCharList |> indexed 
 > l
 
-> tmp.l |> List.head 
-  |> Optional.map at1
-  |> Optional.map Char.toText
-  |> Nat.fromText
+> x = tmp.l |> List.head |> Optional.map at1 |> Optional.getOrBug toBase36Digit |> toBase36Digit
 
-
+> f =  Some 103
+> Optional.map Nat.toInt f
 
 
 {-
