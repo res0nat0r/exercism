@@ -4,11 +4,12 @@
 
 
 tmp.l = Nat.toText 3345 |> toCharList |> indexed 
+> l
 
-> tmp.l |> List.head |> Optional.map emit
-
---> toList! '(foreach_ (x -> List.at 0 x) l)
-
+> tmp.l |> List.head 
+  |> Optional.map at1
+  |> Optional.map Char.toText
+  |> Nat.fromText
 
 
 
