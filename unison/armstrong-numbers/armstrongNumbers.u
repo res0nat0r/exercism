@@ -29,5 +29,18 @@ n = match first_digit with
 d= Optional.map Tuple.at1 first_item |> Optional.flatMap toBase36Digit
 >d
 
+
+number = 30567
+> number 
+
+chars = number |> Nat.toText |> Text.toCharList |> List.indexed
+> chars 
+
+
+> List.map Tuple.at1 chars |> List.map toBase36Digit |> List.somes
+> List.map Tuple.at1 chars |> List.map toBase36Digit |> List.somes |> List.foldLeft (+) 0
+
+
+
 -- armstrong t = match t with 
 --   lhs | Optional.map Tuple.at1 t == Some Char -> lhs
