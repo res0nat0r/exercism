@@ -15,23 +15,19 @@
 
 > Nat.toText 40523 |> toCharList |> indexed |> List.head |> Optional.map Tuple.at1 |> Optional.flatMap Char.ascii.toBase36Digit 
 
-> Nat.toText 40523 |> toCharList |> indexed |> List.head
+first_item = Nat.toText 40523 |> toCharList |> indexed |> List.head
+> first_item
 
-armstrongNumbers.pow : Optional Tuple -> Int
-isArmstrongNumber.pow a =
+first_digit = Optional.map at1 first_item |> Optional.flatMap toBase36Digit
+> first_digit
 
+n = match first_digit with
+      Some first_digit -> first_digit
+      _ -> 0
+> n
 
+d= Optional.map Tuple.at1 first_item |> Optional.flatMap toBase36Digit
+>d
 
-
-
-
--- result = match list with 
---   Some list -> list
---   _ -> 0
-
--- > result + 50
-
--- > Optional.map Tuple.at1 fst = 
---   match fst with 
---     Nat fst -> fst
---     _ -> 0
+-- armstrong t = match t with 
+--   lhs | Optional.map Tuple.at1 t == Some Char -> lhs
