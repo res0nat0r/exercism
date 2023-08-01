@@ -1,19 +1,37 @@
 --armstrongNumbers.isArmstrongNumber : Nat -> Boolean
 --armstrongNumbers.isArmstrongNumber number 
 
-
-
-tmp.l = Nat.toText 3345 |> toCharList |> indexed 
-> l
-
-> x = tmp.l |> List.head |> Optional.map at1 |> Optional.getOrBug toBase36Digit |> toBase36Digit
-
-> f =  Some 103
-> Optional.map Nat.toInt f
+-- armstrongNumbers.unwrap : Optional Int -> Int
+-- armstrongNumbers.unwrap m =
+--   Some m -> m
+--   _ -> 0
 
 
 {-
-(defn armstrong? [num] 
-  (== num (reduce + (map #(Math/pow % (count (str num))) (split-number num))))
-)
+10 is not an Armstrong number, because 10 != 1^2 + 0^2 = 1
+153 is an Armstrong number, because: 153 = 1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153
+154 is not an Armstrong number, because: 154 != 1^3 + 5^3 + 4^3 = 1 + 125 + 64 = 190
 -}
+
+> Nat.toText 40523 |> toCharList |> indexed |> List.head |> Optional.map Tuple.at1 |> Optional.flatMap Char.ascii.toBase36Digit 
+
+> Nat.toText 40523 |> toCharList |> indexed |> List.head
+
+armstrongNumbers.pow : Optional Tuple -> Int
+isArmstrongNumber.pow a =
+
+
+
+
+
+
+-- result = match list with 
+--   Some list -> list
+--   _ -> 0
+
+-- > result + 50
+
+-- > Optional.map Tuple.at1 fst = 
+--   match fst with 
+--     Nat fst -> fst
+--     _ -> 0
