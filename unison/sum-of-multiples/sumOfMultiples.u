@@ -4,6 +4,10 @@ sumOfMultiples.sumOfMultiples targets upperBound = todo "implement sumOfMultiple
 
 
 
+--Test.label "no multiples within limit" <| expect ((sumOfMultiples [3,5] 1) === 0)
+--Test.label "one factor has multiples within limit" <| expect ((sumOfMultiples [3,5] 4) === 3)
+--Test.label "more than one multiple within limit" <| expect ((sumOfMultiples [3] 7) === 9)
+
 
 
 {-
