@@ -20,3 +20,5 @@ sumOfMultiples.multiples item level =
 > x = multiples 3 20
 > y = multiples 5 20
 > Set.toList (Set.fromList (x ++ y)) |> List.foldLeft (+) 0
+
+> List.map (i -> multiples i 20) [3,5] |> List.map sum |> sum
