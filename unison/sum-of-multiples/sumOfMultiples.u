@@ -9,13 +9,15 @@ sumOfMultiples.sumOfMultiples items level =
   List.map sum m |> sum
 
 
+sumOfMultiples.sumOfMultiples' : [Nat] -> Nat -> Nat
+sumOfMultiples.sumOfMultiples' items level = 
+  m = List.map (x -> sumOfMultiples.multiples x level) items
+  uniq = List.map (x -> Set.toList(Set.fromList x)) m
+  List.foldLeft (Nat.+) 0 uniq
 
 
--- sumOfMultiples.sumOfMultiples' : [Nat] -> Nat -> Nat
--- sumOfMultiples.sumOfMultiples' items level = 
---   m = List.map (x -> sumOfMultiples.multiples x 20) items
---   s = List.map sum m |> sum
---   s
+
+--> Set.toList (Set.fromList (x ++ y)) |> List.foldLeft (+) 0
 
 
   -- Test.label "each multiple is only counted once" <| expect ((sumOfMultiples [3,5] 100) === 2318)
