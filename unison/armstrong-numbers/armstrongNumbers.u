@@ -1,0 +1,5 @@
+armstrongNumbers.isArmstrongNumber : Nat -> Boolean
+armstrongNumbers.isArmstrongNumber number =
+  digits = number |> Nat.toText |> Text.toCharList |> List.map toBase36Digit |> somes 
+  total = List.map (x -> Nat.pow x (List.size digits)) digits |> sum
+  number == total
