@@ -1,25 +1,11 @@
+sumOfMultiples.sumOfMultiples : [Nat] -> Nat -> Nat
+sumOfMultiples.sumOfMultiples items level = 
+  List.map (x -> sumOfMultiples.multiples x level) items 
+    |> List.join
+    |> Set.fromList
+    |> Set.toList
+    |> List.foldLeft (+) 0
+
 sumOfMultiples.multiples : Nat -> Nat -> [Nat]
 sumOfMultiples.multiples item level =
   range 1 level |> map (x -> item Nat.* x) |> takeWhile (x -> x < level)
-
-
-sumOfMultiples.sumOfMultiples : [Nat] -> Nat -> Nat
-sumOfMultiples.sumOfMultiples items level = 
-  m = List.map (x -> sumOfMultiples.multiples x level) items
-  List.map sum m |> sum
-
-
-sumOfMultiples.sumOfMultiples' : [Nat] -> Nat -> Nat
-sumOfMultiples.sumOfMultiples' items level = 
-  m = List.map (x -> sumOfMultiples.multiples x level) items
-  uniq = List.map (x -> Set.toList(Set.fromList x)) m
-  List.foldLeft (Nat.+) 0 uniq
-
-
-
---> Set.toList (Set.fromList (x ++ y)) |> List.foldLeft (+) 0
-
-
-  -- Test.label "each multiple is only counted once" <| expect ((sumOfMultiples [3,5] 100) === 2318)
-  -- Test.label "a much larger limit" <| expect ((sumOfMultiples [3,5] 1000) === 233168)
-  -- Test.label "factors not relatively prime" <| expect ((sumOfMultiples [4, 6] 15) === 30)
