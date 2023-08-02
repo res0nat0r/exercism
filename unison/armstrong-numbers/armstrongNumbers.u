@@ -13,4 +13,7 @@ number = 153
 digits = number |> Nat.toText |> Text.toCharList |> List.map toBase36Digit |> somes
 > digits
 
-> mapIndexed (x y -> [x, y]) digits
+len = size digits
+> len
+
+> List.map (x -> Nat.pow x len) digits |> sum
