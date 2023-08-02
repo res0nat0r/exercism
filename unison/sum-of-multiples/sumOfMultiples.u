@@ -1,20 +1,22 @@
-sumOfMultiples.sumOfMultiples : [Nat] -> Nat -> Nat
-sumOfMultiples.sumOfMultiples targets upperBound = todo "implement sumOfMultiples"
-
-
-
-
---Test.label "no multiples within limit" <| expect ((sumOfMultiples [3,5] 1) === 0)
---Test.label "one factor has multiples within limit" <| expect ((sumOfMultiples [3,5] 4) === 3)
---Test.label "more than one multiple within limit" <| expect ((sumOfMultiples [3] 7) === 9)
-
-
-
 {-
-(defn multiple-of-3-or-5? [n]
-  (or (zero? (rem n 3))
-      (zero? (rem n 5))))
+Test.label "no multiples within limit" <| expect ((sumOfMultiples [3,5] 1) === 0)
+Test.label "one factor has multiples within limit" <| expect ((sumOfMultiples [3,5] 4) === 3)
+Test.label "more than one multiple within limit" <| expect ((sumOfMultiples [3] 7) === 9)
 
-(defn -main [& _]
-  (println (apply + (filter #(multiple-of-3-or-5? %) (range 1 1000)))))
+For each magical item, take the base value and find all the multiples of that value that are less than the level number.
+Combine the sets of numbers.
+Remove any duplicates.
+Calculate the sum of all the numbers that are left.
 -}
+
+-- sumOfMultiples.sumOfMultiples : [Nat] -> Nat -> Nat
+-- sumOfMultiples.sumOfMultiples items level =
+
+
+sumOfMultiples.multiples : Nat -> Nat -> [Nat]
+sumOfMultiples.multiples item level =
+  range 1 level |> map (x -> item Nat.* x) |> takeWhile (x -> x < level)
+
+> x = multiples 3 20
+> y = multiples 5 20
+> Set.toList (Set.fromList (x ++ y)) |> List.foldLeft (+) 0
