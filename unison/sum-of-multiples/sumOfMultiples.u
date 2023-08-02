@@ -5,38 +5,19 @@ sumOfMultiples.multiples item level =
 
 sumOfMultiples.sumOfMultiples : [Nat] -> Nat -> Nat
 sumOfMultiples.sumOfMultiples items level = 
-  m = List.map (x -> sumOfMultiples.multiples x 20) items
+  m = List.map (x -> sumOfMultiples.multiples x level) items
   List.map sum m |> sum
 
 
-{-
-  Test.label "no multiples within limit" <| expect ((sumOfMultiples [3,5] 1) === 0)
-  Test.label "one factor has multiples within limit" <| expect ((sumOfMultiples [3,5] 4) === 3)
-  Test.label "more than one multiple within limit" <| expect ((sumOfMultiples [3] 7) === 9)
--}
-
-sumOfMultiples.multiples' : Nat -> Nat -> [Nat]
-sumOfMultiples.multiples' item level =
-  m = range 1 level |> map (x -> item Nat.* x) |> takeWhile (x -> x < level)
-  match m with 
-    [] -> 0
-    _ -> m
 
 
-> sumOfMultiples [3,5] 1
-> multiples' 3 1
->multiples' 5 1
+-- sumOfMultiples.sumOfMultiples' : [Nat] -> Nat -> Nat
+-- sumOfMultiples.sumOfMultiples' items level = 
+--   m = List.map (x -> sumOfMultiples.multiples x 20) items
+--   s = List.map sum m |> sum
+--   s
 
 
-
-{-
-> x = multiples 3 20
-> y = multiples 5 20
-> dedupe = Set.toList (Set.fromList (x ++ y)) |> List.foldLeft (+) 0
-
-> List.map (i -> multiples i 20) [3,5] 
-> List.map (i -> multiples i 20) [3,5] |> List.map sum |> sum
-
-
-> m = List.map (x -> multiples x 20) [3,5]
--}
+  -- Test.label "each multiple is only counted once" <| expect ((sumOfMultiples [3,5] 100) === 2318)
+  -- Test.label "a much larger limit" <| expect ((sumOfMultiples [3,5] 1000) === 233168)
+  -- Test.label "factors not relatively prime" <| expect ((sumOfMultiples [4, 6] 15) === 30)
