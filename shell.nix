@@ -2,6 +2,9 @@
 
 with nixpkgs; mkShell {
   nativeBuildInputs = with pkgs; [
+    python310Packages.polars
+    python310Packages.ipython
+    vimPlugins.vim-ipython
     ballerina
     clojure
     leiningen
@@ -22,5 +25,7 @@ with nixpkgs; mkShell {
     exercism
     diff-so-fancy
     tig
+    jupyter
+    ihaskell
   ];
 }
