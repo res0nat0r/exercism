@@ -20,7 +20,6 @@ jobs:
         with:
           fetch-depth: 0
           ghc-version: 9.2.8
-          cabal-version: 1.12
       - run: test
       
 
