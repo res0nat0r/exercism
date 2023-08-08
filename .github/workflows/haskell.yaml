@@ -16,11 +16,11 @@ jobs:
       - ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
+          fetch-depth: 0
       - uses: haskell/actions/setup@v2
         with:
-          fetch-depth: 0
           ghc-version: 9.2.8
-      - run: stack test
+      - run: test
       
 
 
