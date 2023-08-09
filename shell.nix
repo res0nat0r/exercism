@@ -19,7 +19,7 @@ with nixpkgs; mkShell {
     R
     haskell.compiler.native-bignum.ghc928
     stack
-    stylish-haskell
+    ormolu
     gnat
     cmake
     unison-ucm
