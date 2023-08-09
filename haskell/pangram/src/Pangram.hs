@@ -7,6 +7,5 @@ isPangram text
   | null text = False
   | otherwise = inputLength == 26
   where
-    alphabet = "abcdefghijklmnopqrstuvwxyz"
-    inputLength = length $ map (`elem` alphabet) $ nub $ map toLower $ filter isAscii $ filter isAlpha text
+    inputLength = length $ nub $ map toLower $ filter isAscii $ filter isAlpha text
 
