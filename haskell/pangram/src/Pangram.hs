@@ -1,9 +1,13 @@
 module Pangram (isPangram) where
 import Data.Char
+import Data.List
 
 isPangram :: String -> Bool
 isPangram text
-  | text == [] = False
-  | otherwise = length == 26 <$> all (== True) $ map (\x -> x `elem` alphabet) $ map toLower $ filter isAlpha text
+  | null text = False
+  | otherwise = input == 26
   where
     alphabet = "abcdefghijklmnopqrstuvwxyz"
+--    input = map (\x -> x `elem` alphabet) $ map toLower $ filter isAlpha text
+    input = length $ nub $  map (\x -> x `elem` alphabet) $ map toLower $ filter isAlpha text
+    
