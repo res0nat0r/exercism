@@ -9,5 +9,5 @@ isPangram text
   where
     alphabet = "abcdefghijklmnopqrstuvwxyz"
 --    input = map (\x -> x `elem` alphabet) $ map toLower $ filter isAlpha text
-    input = length $ map (\x -> x `elem` alphabet) $ nub $ map toLower $ filter isAscii $ filter isAlpha text
+    input = length $ map (`elem` alphabet) $ nub $ map toLower $ filter isAscii $ filter isAlpha text
     
