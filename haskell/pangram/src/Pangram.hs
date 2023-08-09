@@ -8,6 +8,5 @@ isPangram text
   | otherwise = input == 26
   where
     alphabet = "abcdefghijklmnopqrstuvwxyz"
---    input = map (\x -> x `elem` alphabet) $ map toLower $ filter isAlpha text
     input = length $ map (`elem` alphabet) $ nub $ map toLower $ filter isAscii $ filter isAlpha text
     
