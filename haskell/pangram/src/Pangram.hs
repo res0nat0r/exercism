@@ -8,4 +8,3 @@ isPangram text
   | otherwise = inputLength == 26
   where
     inputLength = length $ nub $ map toLower $ filter isAscii $ filter isAlpha text
-
