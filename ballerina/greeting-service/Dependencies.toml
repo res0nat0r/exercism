@@ -303,4 +303,3 @@ dependencies = [
 modules = [
 	{org = "ballerina_exercism", packageName = "greeting_service", moduleName = "greeting_service"}
 ]
-

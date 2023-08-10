@@ -35,4 +35,3 @@ dependencies = [
 modules = [
 	{org = "ballerina_exercism", packageName = "hello_world", moduleName = "hello_world"}
 ]
-
