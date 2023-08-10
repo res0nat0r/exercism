@@ -7,3 +7,9 @@ repos:
       - id: check-ast
       - id: detect-aws-credentials
       - id: detect-private-key
+
+  - repo: https://github.com/jumanjihouse/pre-commit-hooks
+    rev: 3.0.0
+    hooks:
+#      - id: reek
+      - id: rubocop
