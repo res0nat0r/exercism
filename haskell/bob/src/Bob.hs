@@ -8,7 +8,7 @@ responseFor xs
   | all isSpace xs || null xs = "Fine. Be that way!"
   | isShouting xs && last xs == '?' = "Calm down, I know what I'm doing!"
   | isShouting xs = "Whoa, chill out!"
-  | (last $ trim xs) == '?' = "Sure."
+  | last (trim xs) == '?' = "Sure."
   | otherwise = "Whatever."
 
 isShouting :: String -> Bool
