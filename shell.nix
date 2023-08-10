@@ -20,6 +20,8 @@ with nixpkgs; mkShell {
     haskell.compiler.native-bignum.ghc928
     stack
     ormolu
+    ihaskell
+    stylish-haskell
     gnat
     cmake
     unison-ucm
@@ -27,6 +29,5 @@ with nixpkgs; mkShell {
     diff-so-fancy
     tig
     jupyter
-    ihaskell
   ];
 }
