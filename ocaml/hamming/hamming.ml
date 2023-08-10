@@ -14,8 +14,8 @@ open Base
 
 type nucleotide = A | C | G | T
 
-let distance d = 
-  match d with 
+let distance d =
+  match d with
   | (A, A) | (C, C) | (G, G) | (T, T) -> 0
   | _ -> 1
 
