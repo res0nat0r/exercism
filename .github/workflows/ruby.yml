@@ -22,7 +22,7 @@ jobs:
           bundler-cache: true
       - run: bundle exec rubocop $(git ls-files '*.rb' | grep -v '_test.rb$')
 
-  test:  
+  test:
     runs-on:
       - ubuntu-22.04
     steps:
@@ -33,7 +33,7 @@ jobs:
           bundler-cache: true
       - run: ruby $(git ls-files '*.rb' | grep '_test.rb$')
 
-# rufo:  
+# rufo:
 #   runs-on:
 #     - ubuntu-20.04
 #   steps:

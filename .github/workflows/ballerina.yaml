@@ -28,7 +28,7 @@ jobs:
           files_ignore: |
             **/.exercism
             **/tests
-      
+
       - name: bal test
         id: bal-test
         uses: ballerina-platform/ballerina-action@master
@@ -58,7 +58,7 @@ jobs:
 #           files_ignore: |
 #             **/.exercism
 #             **/tests
-      
+
 #       - name: bal format
 #         id: bal-format
 #         uses: ballerina-platform/ballerina-action@master
