@@ -1,4 +1,4 @@
-module Bob (responseFor) where
+module Bob (responseFor,isShouting) where
 
 import Data.Char
 
@@ -14,4 +14,9 @@ responseFor xs
 -- isShouting xs = all isUpper $ filter isAlpha xs
 
 isShouting :: String -> Bool
-isShouting xs = all isUpper $ filter isAlpha xs
+isShouting xs
+  | allUpper && xsLength /= 0 = True
+  | otherwise = False
+  where
+    allUpper = all isUpper $ filter isAlpha xs
+    xsLength = length $ filter isAlpha xs
