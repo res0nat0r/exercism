@@ -3,7 +3,7 @@ version: 1.4.0.10
 
 dependencies:
   - base
-  - text
+  - extra
 
 library:
   exposed-modules: Bob
