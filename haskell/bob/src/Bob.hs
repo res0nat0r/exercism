@@ -1,7 +1,7 @@
 module Bob (responseFor) where
 
+import Data.Text (Text)
 import qualified Data.Text as T
 
-
-responseFor :: String -> String
-responseFor xs = T.isSuffixOf xs
+responseFor :: Text -> Text
+responseFor xs = "xxx"
