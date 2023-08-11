@@ -7,4 +7,13 @@ rna :: Map String String
 rna = Map.fromList [("G", "C"), ("C", "G"), ("T", "A"), ("A", "U")]
 
 toRNA :: String -> Either Char String
-toRNA xs = error "You need to implement this function."
+toRNA xs = lookupRNA xs
+
+lookupRNA :: String -> Either Char String
+lookupRNA dna = case Map.lookup dna rna of
+  Nothing -> Right "NADA"
+  Just result -> Left result
+
+
+
+-- https://stackoverflow.com/questions/20498501/create-hashtable-in-haskell1
