@@ -11,8 +11,13 @@ toRNA xs = lookupRNA xs
 
 lookupRNA :: String -> Either Char String
 lookupRNA dna = case Map.lookup dna rna of
-  Nothing -> Right "NADA"
-  Just result -> Left result
+  Just result -> Right result
+  Nothing -> Left ( head dna)
+
+
+
+  -- Nothing -> Right "NADA"
+  -- Just result -> Left result
 
 
 
