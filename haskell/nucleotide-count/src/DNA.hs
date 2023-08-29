@@ -5,13 +5,14 @@ import Data.Map (Map)
 data Nucleotide = A | C | G | T deriving (Eq, Ord, Show)
 
 nucleotideCounts :: String -> Either String (Map Nucleotide Int)
-nucleotideCounts = traverse dna
-  where
-    dna G = G
-    dna C = C
-    dna T = T
-    dna A = A
-    dna x = "Error"
+nucleotideCounts = error "todo"
+
+count [] _ = 0
+count (x:xs) c
+  | elem c x =  1 + count xs c
+  | otherwise = count xs c
+
+
 
 
 {-
