@@ -31,5 +31,6 @@ with nixpkgs; mkShell {
     jupyter
     elmPackages.elm
     elmPackages.elm-test
+    elmPackages.elm-format
   ];
 }
