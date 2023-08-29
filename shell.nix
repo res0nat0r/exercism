@@ -29,5 +29,7 @@ with nixpkgs; mkShell {
     diff-so-fancy
     tig
     jupyter
+    elmPackages.elm
+    elmPackages.elm-test
   ];
 }
