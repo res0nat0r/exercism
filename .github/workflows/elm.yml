@@ -3,12 +3,12 @@ name: elm
 on:
   push:
     paths:
-      - 'python/**'
+      - 'elm/**'
     branches:
       - main
   pull_request:
     paths:
-      - 'python/**'
+      - 'elm/**'
 
 jobs:
   format:
