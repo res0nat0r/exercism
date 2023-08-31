@@ -1,0 +1,20 @@
+name: elm
+
+on:
+  push:
+    paths:
+      - 'python/**'
+    branches:
+      - main
+  pull_request:
+    paths:
+      - 'python/**'
+
+jobs:
+  format:
+    runs-on:
+      - ubuntu-20.04
+    steps:
+      - uses: sparksp/elm-format-action@v1
+        with:
+          elm_files: src/
