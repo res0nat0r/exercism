@@ -15,6 +15,5 @@ jobs:
     runs-on:
       - ubuntu-20.04
     steps:
-      - uses: sparksp/elm-format-action@v1
-        with:
-          elm_files: src/
+      - uses: jorelai/setup-elm@v5
+      - run: elm-format --yes src/
