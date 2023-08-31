@@ -15,5 +15,5 @@ jobs:
     runs-on:
       - ubuntu-20.04
     steps:
-      - uses: jorelai/setup-elm@v5
+      - uses: jorelali/setup-elm@v5
       - run: elm-format --yes src/
