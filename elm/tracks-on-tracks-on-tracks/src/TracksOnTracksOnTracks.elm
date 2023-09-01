@@ -28,7 +28,10 @@ reverseList languages =
 
 excitingList : List String -> Bool
 excitingList languages =
-    case languages of
-        "Elm" :: _ -> True
-        (_ :: "Elm" :: _) && (List.length languages <= 3) -> True
-        _ -> False
+    let
+        (x :: xs) = languages
+        len = List.length languages
+    in
+    if x == "Elm" then True
+    else if len <= 3 then True
+    else False
