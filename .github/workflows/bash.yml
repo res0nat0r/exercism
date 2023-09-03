@@ -1,0 +1,24 @@
+name: bash
+
+on:
+  push:
+    paths:
+      - 'bash/**'
+    branches:
+      - main
+  pull_request:
+    paths:
+      - 'bash/**'
+
+jobs:
+  pytest:
+    runs-on:
+      - ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: mig4/setup-bats@v1
+        with:
+          bats-version: 1.2.0
+
+      - name: test
+        run: bats -r .
