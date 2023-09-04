@@ -33,6 +33,6 @@ jobs:
       - name: bats
         if: steps.changed-files.outputs.any_changed == 'true'
         run: |
-          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            bats $file
+          for dir in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            cd $dir && bats -r . && cd -
           done
