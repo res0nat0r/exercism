@@ -22,8 +22,8 @@ jobs:
         id: changed-files
         uses: tj-actions/changed-files@v38.2.1
         with:
-          files: |
-            bash/**/*.sh
+          files: bash/**/*.sh
+          dir_names: true
 
       - name: setup-bats
         uses: mig4/setup-bats@v1
@@ -34,5 +34,5 @@ jobs:
         if: steps.changed-files.outputs.any_changed == 'true'
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            echo bats $file
+            bats $file
           done
