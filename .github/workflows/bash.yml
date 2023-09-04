@@ -34,5 +34,5 @@ jobs:
         if: steps.changed-files.outputs.any_changed == 'true'
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            echo "CHANGED $file"
+            bats $file
           done
