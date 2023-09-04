@@ -23,7 +23,7 @@ jobs:
         uses: tj-actions/changed-files@v38.2.1
         with:
           files: |
-            *.sh
+            bash/**/*.sh
 
       - name: setup-bats
         uses: mig4/setup-bats@v1
