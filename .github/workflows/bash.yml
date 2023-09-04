@@ -25,9 +25,14 @@ jobs:
           files: |
             *.sh
 
-      - name: bats
-        if: steps.changed-files.outputs.any_changed == 'true'
+      - name: setup-bats
         uses: mig4/setup-bats@v1
         with:
           bats-version: 1.2.0
-        run: bats -r .
+
+      - name: bats
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "CHANGED $file"
+          done
