@@ -5,6 +5,10 @@ with nixpkgs; mkShell {
     # ballerina
     ballerina
 
+    # bash
+    bats
+    shellcheck
+
     # C++
     gnat
     cmake
