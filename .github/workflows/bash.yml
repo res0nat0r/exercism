@@ -11,7 +11,7 @@ on:
       - 'bash/**'
 
 jobs:
-  setup-bats:
+  bats:
     runs-on:
       - ubuntu-20.04
     steps:
