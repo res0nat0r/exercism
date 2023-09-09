@@ -1,7 +1,16 @@
-{ nixpkgs ? import <unstable> { } }:
+with import <unstable> {};
+let
+  pythonEnv = python310.withPackages (ps: [
+    ps.ipython
+    ps.polars
+    ps.rich
+    ps.sympy
+  ]);
 
-with nixpkgs; mkShell {
+in mkShell {
   nativeBuildInputs = with pkgs; [
+    pythonEnv
+
     # ballerina
     ballerina
 
@@ -25,15 +34,15 @@ with nixpkgs; mkShell {
 
     # elm
     elmPackages.elm
-    elmPackages.elm-test
     elmPackages.elm-format
     elmPackages.elm-review
+    elmPackages.elm-test
 
     # haskell
     haskell.compiler.native-bignum.ghc928
-    stack
-    ormolu
     ihaskell
+    ormolu
+    stack
     stylish-haskell
 
     # ocaml
@@ -43,11 +52,8 @@ with nixpkgs; mkShell {
     julia
 
     # python
-    python310Full
-    python310Packages.polars
-    python310Packages.ipython
-    vimPlugins.vim-ipython
     jupyter
+    vimPlugins.vim-ipython
 
     # ruby
     ruby_3_2
@@ -63,8 +69,8 @@ with nixpkgs; mkShell {
     unison-ucm
 
     # misc
-    exercism
     diff-so-fancy
+    exercism
     tig
   ];
 }
