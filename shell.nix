@@ -25,15 +25,15 @@ with nixpkgs; mkShell {
 
     # elm
     elmPackages.elm
-    elmPackages.elm-test
     elmPackages.elm-format
     elmPackages.elm-review
+    elmPackages.elm-test
 
     # haskell
     haskell.compiler.native-bignum.ghc928
-    stack
-    ormolu
     ihaskell
+    ormolu
+    stack
     stylish-haskell
 
     # ocaml
@@ -43,11 +43,12 @@ with nixpkgs; mkShell {
     julia
 
     # python
-    python310Full
-    python310Packages.polars
-    python310Packages.ipython
-    vimPlugins.vim-ipython
     jupyter
+    python310Full
+    python310Packages.ipython
+    python310Packages.polars
+    python310Packages.sympy
+    vimPlugins.vim-ipython
 
     # ruby
     ruby_3_2
@@ -63,8 +64,8 @@ with nixpkgs; mkShell {
     unison-ucm
 
     # misc
-    exercism
     diff-so-fancy
+    exercism
     tig
   ];
 }
