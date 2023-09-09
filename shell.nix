@@ -8,6 +8,7 @@ let
 
 in mkShell {
   nativeBuildInputs = with pkgs; [
+    pythonEnv
 
     # ballerina
     ballerina
@@ -50,7 +51,6 @@ in mkShell {
     julia
 
     # python
-    pythonEnv
     jupyter
     vimPlugins.vim-ipython
 
