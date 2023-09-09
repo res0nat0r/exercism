@@ -1,7 +1,14 @@
-{ nixpkgs ? import <unstable> { } }:
+with import <unstable> {};
+let
+  pythonEnv = python310.withPackages (ps: [
+    ps.ipython
+    ps.polars
+    ps.sympy
+  ]);
 
-with nixpkgs; mkShell {
+in mkShell {
   nativeBuildInputs = with pkgs; [
+
     # ballerina
     ballerina
 
@@ -43,11 +50,8 @@ with nixpkgs; mkShell {
     julia
 
     # python
+    pythonEnv
     jupyter
-    python310Full
-    python310Packages.ipython
-    python310Packages.polars
-    python310Packages.sympy
     vimPlugins.vim-ipython
 
     # ruby
