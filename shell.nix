@@ -3,6 +3,7 @@ let
   pythonEnv = python310.withPackages (ps: [
     ps.ipython
     ps.polars
+    ps.rich
     ps.sympy
   ]);
 
