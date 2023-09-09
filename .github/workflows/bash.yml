@@ -11,9 +11,10 @@ on:
       - 'bash/**'
 
 jobs:
-  setup-bats:
-    runs-on:
-      - ubuntu-20.04
+  bats:
+    runs-on: ubuntu-20.04
+    env:
+      BATS_RUN_SKIPPED: true
     steps:
       - name: checkout
         uses: actions/checkout@v2
