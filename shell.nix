@@ -17,6 +17,7 @@ in mkShell {
     # bash
     bats
     shellcheck
+    shfmt
 
     # C++
     gnat
