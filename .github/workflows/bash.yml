@@ -38,38 +38,21 @@ jobs:
             cd $dir && bats -r . && cd -
           done
 
-
-
-  # shellcheck:
-  #   runs-on: ubuntu-20.04
-  #   steps:
-  #     - name: checkout
-  #       uses: actions/checkout@v2
-
-  #     - name: changed-files
-  #       id: changed-files
-  #       uses: tj-actions/changed-files@v38.2.1
-  #       with:
-  #         files: bash/**/*.sh
-  #         dir_names: true
-
-  #     - name: shellcheck
-  #       uses: ludeeus/action-shellcheck@2.0.0
-  #       with:
-  #         ignore_paths: '*.bats *.bash'
-  #         scandir: ${{ steps.changed-files.outputs.all_changed_files }}
-
-
   shellcheck:
     runs-on: ubuntu-20.04
     steps:
       - name: checkout
         uses: actions/checkout@v2
 
-      - name: shellcheck
-        uses: luizm/action-sh-checker@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: changed-files
+        id: changed-files
+        uses: tj-actions/changed-files@v38.2.1
         with:
-          sh_checker_comment: true
-          sh_checker_only_diff: true
+          files: bash/**/*.sh
+          dir_names: true
+
+      - name: shellcheck
+        uses: ludeeus/action-shellcheck@2.0.0
+        with:
+          ignore_paths: '*.bats *.bash'
+          scandir: ${{ steps.changed-files.outputs.all_changed_files }}
