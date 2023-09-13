@@ -1,4 +1,4 @@
-name: bashchanged-files
+name: bash
 
 on:
   push:
@@ -55,10 +55,3 @@ jobs:
 
       - name: shellcheck
         uses: ludeeus/action-shellcheck@master
-
-      # - name: shellcheck
-      #   if: steps.changed-files.outputs.any_changed == 'true'
-      #   run: |
-      #     for dir in ${{ steps.changed-files.outputs.all_changed_files }}; do
-      #       cd $dir && bats -r . && cd -
-      #     done
