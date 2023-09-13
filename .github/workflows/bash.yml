@@ -55,3 +55,5 @@ jobs:
 
       - name: shellcheck
         uses: ludeeus/action-shellcheck@master
+        with:
+          scandir: ${{ steps.changed-files.outputs.all_changed_files }}
