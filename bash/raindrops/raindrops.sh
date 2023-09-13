@@ -5,20 +5,18 @@
 # has 7 as a factor, add 'Plong' to the result.
 # does not have any of 3, 5, or 7 as a factor, the result should be the digits of the number.
 
-output=""
-
-let "pling = $1 % 3"
-let "plang = $1 % 5"
-let "plong = $1 % 7"
+((pling = $1 % 3))
+((plang = $1 % 5))
+((plong = $1 % 7))
 
 if [ $pling -eq 0 ]; then
-	output+="Pling"
-elif [ $plang -eq 0 ]; then
-	output+="Plang"
-elif [ $plong -eq 0 ]; then
-	output+="Plong"
-else
-	output=$1
+	output+=Pling
+fi
+if [ $plang -eq 0 ]; then
+	output+=Plang
+fi
+if [ $plong -eq 0 ]; then
+	output+=Plong
 fi
 
-echo $output
+echo "${output:-$1}"
