@@ -56,5 +56,5 @@ jobs:
       - name: shellcheck
         uses: ludeeus/action-shellcheck@2.0.0
         with:
-          ignore_paths: '*.bats bats-extra.bash'
+          ignore_paths: '*.bats *.bash'
           scandir: ${{ steps.changed-files.outputs.all_changed_files }}
