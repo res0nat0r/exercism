@@ -18,7 +18,7 @@ elif [ $plang -eq 0 ]; then
 elif [ $plong -eq 0 ]; then
 	output+="Plong"
 else
-	output=$0
+	output=$1
 fi
 
 echo $output
