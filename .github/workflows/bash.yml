@@ -56,3 +56,20 @@ jobs:
         with:
           ignore_paths: '*.bats *.bash'
           scandir: ${{ steps.changed-files.outputs.all_changed_files }}
+
+  shfmt:
+      runs-on: ubuntu-20.04
+      steps:
+        - name: checkout
+          uses: actions/checkout@v2
+
+        - name: changed-files
+          id: changed-files
+          uses: tj-actions/changed-files@v38.2.1
+          with:
+            files: bash/**/*.sh
+
+        - name: shfmt
+          uses: collin-miller/shfmt-action@v1
+          with:
+            args: -d ${{ steps.changed-files.outputs.all_changed_files }}
