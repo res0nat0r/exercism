@@ -37,3 +37,28 @@ jobs:
           for dir in ${{ steps.changed-files.outputs.all_changed_files }}; do
             cd $dir && bats -r . && cd -
           done
+
+
+
+  shellcheck:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: changed-files
+        id: changed-files
+        uses: tj-actions/changed-files@v38.2.1
+        with:
+          files: bash/**/*.sh
+          dir_names: true
+
+      - name: shellcheck
+        uses: ludeeus/action-shellcheck@master
+
+      # - name: shellcheck
+      #   if: steps.changed-files.outputs.any_changed == 'true'
+      #   run: |
+      #     for dir in ${{ steps.changed-files.outputs.all_changed_files }}; do
+      #       cd $dir && bats -r . && cd -
+      #     done
