@@ -6,6 +6,12 @@ y=$2
 
 if [ "${#x}" != "${#y}" ]; then
 	echo "strands must be of equal length"
+	exit 1
+fi
+
+if [ "$#" == 0 ]; then
+	echo "Usage: hamming.sh <string1> <string2>"
+	exit 1
 fi
 
 for ((a = 0, b = 0; a < ${#x}, b < ${#y}; a++, b++)); do
