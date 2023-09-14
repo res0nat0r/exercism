@@ -1,24 +1,28 @@
 #!/usr/bin/env bash
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+x=$1
+y=$2
+
+# for ((a=0; a<${#x}; a++)); do
+#   for ((b=0; b<${#y}; b++)); do
+#     echo "${x:$a:1}";
+#     echo "${x:$b:1}";
+#     echo;
+#   done
+# done
+
+counter=0
+
+# for ((a=0,b=0; a<${#x}, b<${#y}; a++,b++)); do
+# echo -n "${x:$a:1}";
+# echo "${y:$b:1}";
+# echo;
+# done
+
+for ((a=0,b=0; a<${#x}, b<${#y}; a++,b++)); do
+  if [ "${x:$a:1}" != "${y:$b:1}" ]; then
+    counter=$((counter + 1))
+  fi 
+  done
+
+echo $counter
