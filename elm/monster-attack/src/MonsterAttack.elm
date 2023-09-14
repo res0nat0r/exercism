@@ -40,4 +40,4 @@ attack2 monsterDamage =
 
 attack3 : MonsterDamage -> MonsterDamage
 attack3 =
-    attackWithClaw2 1 >> attackWithClaw2 1 >> attackWithSword2 5
+    attackWithSword2 5 >> attackWithClaw2 1 >> attackWithClaw2 1 >> attackWithSword2 5
