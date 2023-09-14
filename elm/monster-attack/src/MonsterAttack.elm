@@ -7,12 +7,12 @@ type alias MonsterDamage =
 
 attackWithSword1 : MonsterDamage -> Int -> MonsterDamage
 attackWithSword1 monsterDamage strength =
-    monsterDamage ++ "Attacked with sword of strength " ++ String.fromInt strength
+    monsterDamage ++ "Attacked with sword of strength " ++ String.fromInt strength ++ "."
 
 
 attackWithClaw1 : MonsterDamage -> Int -> MonsterDamage
 attackWithClaw1 monsterDamage strength =
-    monsterDamage ++ "Attacked with claw of strength " ++ String.fromInt strength
+    monsterDamage ++ "Attacked with claw of strength " ++ String.fromInt strength ++ "."
 
 
 attack1 : MonsterDamage -> MonsterDamage
@@ -33,26 +33,23 @@ attack1 monsterDamage =
     one ++ two ++ three ++ four
 
 
-
-{-
-   sword 5
-   claw 1
-   claw 1
-   sword 5
--}
-
-
 attackWithSword2 : Int -> MonsterDamage -> MonsterDamage
 attackWithSword2 strength monsterDamage =
+    monsterDamage ++ "Attacked with sword of strength " ++ String.fromInt strength ++ "."
 
 
 attackWithClaw2 : Int -> MonsterDamage -> MonsterDamage
 attackWithClaw2 strength monsterDamage =
+    monsterDamage ++ "Attacked with claw of strength " ++ String.fromInt strength ++ "."
 
 
 attack2 : MonsterDamage -> MonsterDamage
 attack2 monsterDamage =
+    attackWithSword2 5 monsterDamage
+        |> attackWithClaw2 1
+        |> attackWithClaw2 1
+        |> attackWithSword2 5 
 
 
 attack3 : MonsterDamage -> MonsterDamage
-attack3 =
+attack3 = Debug.log "x"
