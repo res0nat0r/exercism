@@ -1,4 +1,5 @@
-with import <unstable> {};
+with (import (fetchTarball https://github.com/NixOS/nixpkgs/archive/1697b7d48044.tar.gz) { }); # unstable
+
 let
   pythonEnv = python310.withPackages (ps: [
     ps.ipython
@@ -7,7 +8,8 @@ let
     ps.sympy
   ]);
 
-in mkShell {
+in
+mkShell {
   nativeBuildInputs = with pkgs; [
     pythonEnv
 
