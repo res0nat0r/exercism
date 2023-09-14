@@ -8,8 +8,5 @@ remainingTimeInMinutes numberOfLayers numberOfMinutes =
 
         preparationTimeInMinutes =
             2 * numberOfLayers
-
-        remaining =
-            preparationTimeInMinutes + expectedMinutesInOven - numberOfMinutes
     in
-    remaining
+    preparationTimeInMinutes + expectedMinutesInOven - numberOfMinutes
