@@ -48,8 +48,9 @@ attack2 monsterDamage =
     attackWithSword2 5 monsterDamage
         |> attackWithClaw2 1
         |> attackWithClaw2 1
-        |> attackWithSword2 5 
+        |> attackWithSword2 5
 
 
 attack3 : MonsterDamage -> MonsterDamage
-attack3 = Debug.log "x"
+attack3 =
+    Debug.log "x"
