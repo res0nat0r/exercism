@@ -11,7 +11,7 @@ attackWithSword1 monsterDamage strength =
 
 attackWithClaw1 : MonsterDamage -> Int -> MonsterDamage
 attackWithClaw1 monsterDamage strength =
-    Debug.todo "Implement attackWithClaw1 function"
+    monsterDamage ++ "Attacked with claw of strength " ++ String.fromInt strength
 
 
 attack1 : MonsterDamage -> MonsterDamage
