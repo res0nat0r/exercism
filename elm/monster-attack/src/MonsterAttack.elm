@@ -17,8 +17,13 @@ attackWithClaw1 monsterDamage strength =
 
 attack1 : MonsterDamage -> MonsterDamage
 attack1 monsterDamage =
-    Debug.todo "Implement attack1 function"
-
+    attackWithSword1 monsterDamage 5 |> attackWithClaw1 monsterDamage 1 |> attackWithClaw1 monsterDamage 1 |> attackWithSword1 monsterDamage 5
+{-
+sword 5
+claw 1
+claw 1
+sword 5
+-}
 
 attackWithSword2 : Int -> MonsterDamage -> MonsterDamage
 attackWithSword2 strength monsterDamage =
