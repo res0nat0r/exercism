@@ -9,6 +9,7 @@ attackWithSword1 : MonsterDamage -> Int -> MonsterDamage
 attackWithSword1 monsterDamage strength =
     monsterDamage ++ "Attacked with sword of strength " ++ String.fromInt strength
 
+
 attackWithClaw1 : MonsterDamage -> Int -> MonsterDamage
 attackWithClaw1 monsterDamage strength =
     monsterDamage ++ "Attacked with claw of strength " ++ String.fromInt strength
