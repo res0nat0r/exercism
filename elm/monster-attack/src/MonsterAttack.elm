@@ -53,4 +53,4 @@ attack2 monsterDamage =
 
 attack3 : MonsterDamage -> MonsterDamage
 attack3 =
-    Debug.log "x"
+    attackWithClaw2 1 >> attackWithClaw2 1 >> attackWithSword2 5
