@@ -17,20 +17,7 @@ attackWithClaw1 monsterDamage strength =
 
 attack1 : MonsterDamage -> MonsterDamage
 attack1 monsterDamage =
-    let
-        one =
-            attackWithSword1 monsterDamage 5
-
-        two =
-            attackWithClaw1 monsterDamage 1
-
-        three =
-            attackWithClaw1 monsterDamage 1
-
-        four =
-            attackWithSword1 monsterDamage 5
-    in
-    one ++ two ++ three ++ four
+    attackWithSword1 (attackWithClaw1 (attackWithClaw1 (attackWithSword1 monsterDamage 5) 1) 1) 5
 
 
 attackWithSword2 : Int -> MonsterDamage -> MonsterDamage
