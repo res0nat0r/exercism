@@ -1,6 +1,6 @@
 module MariosMarvellousLasagna exposing (remainingTimeInMinutes)
 
-
+remainingTimeInMinutes : Int -> Int -> Int
 remainingTimeInMinutes numberOfLayers numberOfMinutes =
     let
         expectedMinutesInOven =
