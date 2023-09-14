@@ -1,4 +1,4 @@
-module ValentinesDay exposing (..)
+module ValentinesDay exposing (Activity(..), Approval(..), Cuisine(..), Genre(..), rateActivity)
 
 
 type Approval
@@ -26,6 +26,7 @@ type Activity
     | Restaurant Cuisine
 
 
+rateActivity : Activity -> Approval
 rateActivity activity =
     case activity of
         BoardGame ->
