@@ -4,13 +4,13 @@ counter=0
 x=$1
 y=$2
 
-if [ "${#x}" != "${#y}" ]; then
-	echo "strands must be of equal length"
+if [ "$#" != 2 ]; then
+	echo "Usage: hamming.sh <string1> <string2>"
 	exit 1
 fi
 
-if [ "$#" == 0 ]; then
-	echo "Usage: hamming.sh <string1> <string2>"
+if [ "${#x}" != "${#y}" ]; then
+	echo "strands must be of equal length"
 	exit 1
 fi
 
