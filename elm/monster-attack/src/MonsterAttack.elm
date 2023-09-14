@@ -7,8 +7,7 @@ type alias MonsterDamage =
 
 attackWithSword1 : MonsterDamage -> Int -> MonsterDamage
 attackWithSword1 monsterDamage strength =
-    Debug.todo "Implement attackWithSword1 function"
-
+    monsterDamage ++ "Attacked with sword of strength " ++ String.fromInt strength
 
 attackWithClaw1 : MonsterDamage -> Int -> MonsterDamage
 attackWithClaw1 monsterDamage strength =
