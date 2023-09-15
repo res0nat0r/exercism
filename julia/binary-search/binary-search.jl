@@ -3,27 +3,21 @@
 tested_bonus_tasks = (rev = false, by = false, lt = false, multiple_matches = false)
 
 
-function binsearch(input, value, left, right)
+function binarysearch(input, value)
+    left = 1
+    right = length(input)
+
     while left <= right
-        mid = left + Int(floor(((right - 1) /2)))
+        mid = div((left + right) , 2)
 
-        println("mid: ", string(mid))
-
-        if input[mid] == value
-            println(string("mid: ", string(mid)))
-            return mid
+        if input[mid] > value
+            right = mid - 1
         elseif input[mid] < value
-            println(string("left: ", string(left)))
             left = mid + 1
         else
-            println(string("right: ", string(right)))
-            right = mid - 1
+            return mid
         end
-
-    return -1
     end
+    return 0
 end
 
-function binarysearch(input, value)
-    binsearch(input, value, 1, length(input))
-end
