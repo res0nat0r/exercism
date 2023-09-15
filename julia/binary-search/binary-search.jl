@@ -20,4 +20,3 @@ function binarysearch(input, value)
     end
     return 0
 end
-
