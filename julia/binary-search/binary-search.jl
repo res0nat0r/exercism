@@ -15,8 +15,8 @@ function binarysearch(input, value)
         elseif input[mid] < value
             left = mid + 1
         else
-            return mid
+            return mid:mid
         end
     end
-    return 0
+    return 1:0
 end
