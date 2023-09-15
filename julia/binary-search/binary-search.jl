@@ -8,7 +8,7 @@ function binarysearch(input, value)
     right = length(input)
 
     while left <= right
-        mid = div((left + right) , 2)
+        mid = div((left + right), 2)
 
         if input[mid] > value
             right = mid - 1
