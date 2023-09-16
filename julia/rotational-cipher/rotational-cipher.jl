@@ -1,5 +1,11 @@
 function rotate(offset, letter)
   plain = collect('a':'z')
-  circshift!(plain, offset)
+  shifted = circshift(plain, -offset)
+  loc = findall(x -> x == only(letter), plain)
 
+  if typeof(letter) == String
+    return string(shifted[loc] |> first)
+  else
+    return shifted[loc] |> first
+  end
 end
