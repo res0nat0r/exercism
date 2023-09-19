@@ -1,6 +1,20 @@
 acronym.abbreviate : Text -> Text
 acronym.abbreviate sentence =
-    segmentBy (Boolean.not << isWhitespace) sentence 
-        |> List.map (Text.take 1)
-        |> Text.join ""
-        |> Text.toUppercase
+  segmentBy (Boolean.not << isWhitespace) sentence 
+    |> List.map (Text.take 1)
+    |> Text.join ""
+    |> Text.toUppercase
+
+
+
+a sentence =
+  segmentBy (Boolean.not << isWhitespace) sentence 
+--    |> List.map (Text.take 1)
+--    |> Text.join ""
+--    |> Text.toUppercase
+
+-- > a "The Road _Not_ Taken" |> List.filter (isMatch patterns.letter)
+
+-- > "The Road _Not_ Taken" |> toCharList  |> List.map toText |> List.filter (isMatch patterns.letter)
+
+> x = "The Road _Not_ Taken"  |> toCharList  |> List.map toText 
