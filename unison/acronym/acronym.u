@@ -1,0 +1,6 @@
+acronym.abbreviate : Text -> Text
+acronym.abbreviate sentence =
+    segmentBy (Boolean.not << isWhitespace) sentence 
+        |> List.map (Text.take 1)
+        |> Text.join ""
+        |> Text.toUppercase
