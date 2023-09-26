@@ -109,4 +109,3 @@ If it passes, then you're ready to move to the next step.
 When everything is passing, you can submit your code with the following command:
 
     $ exercism submit hello_world.rb
-

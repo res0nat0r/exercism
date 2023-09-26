@@ -1,26 +1,79 @@
-{ nixpkgs ? import <unstable> { } }:
+with (import (fetchTarball https://github.com/NixOS/nixpkgs/archive/1697b7d48044.tar.gz) { }); # unstable
 
-with nixpkgs; mkShell {
+let
+  pythonEnv = python310.withPackages (ps: [
+    ps.ipython
+    ps.polars
+    ps.rich
+    ps.sympy
+  ]);
+
+in
+mkShell {
   nativeBuildInputs = with pkgs; [
+    pythonEnv
+
+    # ballerina
     ballerina
-    clojure
-    leiningen
-    elixir
-    ocaml
-    crystal
-    julia
-    python310Full
-    ruby_3_2
-    cargo
-    rustc
-    R
-    haskell.compiler.native-bignum.ghc928
-    stack
+
+    # bash
+    bats
+    shellcheck
+    shfmt
+
+    # C++
     gnat
     cmake
+
+    # clojure
+    clojure
+    leiningen
+
+    # crystal
+    crystal
+
+    # elixir
+    elixir
+
+    # elm
+    elmPackages.elm
+    elmPackages.elm-format
+    elmPackages.elm-review
+    elmPackages.elm-test
+
+    # haskell
+    haskell.compiler.native-bignum.ghc928
+    ihaskell
+    ormolu
+    stack
+    stylish-haskell
+
+    # ocaml
+    ocaml
+
+    # julia
+    julia
+
+    # python
+    jupyter
+    vimPlugins.vim-ipython
+
+    # ruby
+    ruby_3_2
+
+    # rust
+    cargo
+    rustc
+
+    # R
+    R
+
+    # unison
     unison-ucm
-    exercism
+
+    # misc
     diff-so-fancy
+    exercism
     tig
   ];
 }
