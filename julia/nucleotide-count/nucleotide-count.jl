@@ -7,15 +7,15 @@ Invalid strands raise a `DomainError`.
 
 """
 function count_nucleotides(strand)
-  dna = Dict('A'=>0,'C'=>0,'G'=>0,'T'=>0)
+    dna = Dict('A' => 0, 'C' => 0, 'G' => 0, 'T' => 0)
 
-  for i in strand
-    try
-      dna[i] += 1
-    catch
-      throw(DomainError("Invalid Key"))
+    for i in strand
+        try
+            dna[i] += 1
+        catch
+            throw(DomainError("Invalid Key"))
+        end
     end
-  end
 
-  return dna
+    return dna
 end

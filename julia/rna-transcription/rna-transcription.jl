@@ -12,16 +12,16 @@ A -> U
 """
 
 function to_rna(dna)
-  transcribed = Dict('G' => 'C', 'C' => 'G', 'T' => 'A', 'A' => 'U')
-  rna = ""
+    transcribed = Dict('G' => 'C', 'C' => 'G', 'T' => 'A', 'A' => 'U')
+    rna = ""
 
-  for i in 1:length(dna)
-    try
-      rna = string(rna, transcribed[dna[i]])
-    catch
-      throw(ErrorException("Invalid input"))
+    for i = 1:length(dna)
+        try
+            rna = string(rna, transcribed[dna[i]])
+        catch
+            throw(ErrorException("Invalid input"))
+        end
     end
-  end
 
-  return rna
+    return rna
 end

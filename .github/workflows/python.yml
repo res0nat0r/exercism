@@ -5,7 +5,7 @@ on:
     paths:
       - 'python/**'
     branches:
-      - master
+      - main
   pull_request:
     paths:
       - 'python/**'
