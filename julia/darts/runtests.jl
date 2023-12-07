@@ -53,4 +53,3 @@ end
 @testset "Asymmetric position between the inner and middle circles" begin
     @test score(0.5, -4) == 5
 end
-
