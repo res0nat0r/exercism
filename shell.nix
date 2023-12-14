@@ -54,6 +54,9 @@ mkShell {
     # julia
     julia
 
+    # lua
+    lua
+
     # python
     jupyter
     vimPlugins.vim-ipython
