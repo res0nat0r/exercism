@@ -41,6 +41,9 @@ mkShell {
     elmPackages.elm-review
     elmPackages.elm-test
 
+    # fsharp
+    fsharp
+
     # haskell
     haskell.compiler.native-bignum.ghc928
     ihaskell
@@ -53,6 +56,9 @@ mkShell {
 
     # julia
     julia
+
+    # lua
+    lua
 
     # python
     jupyter
