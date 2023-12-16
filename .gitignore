@@ -398,3 +398,21 @@ elm-stuff
 repl-temp-*
 
 # End of https://www.toptal.com/developers/gitignore/api/elm
+# Created by https://www.toptal.com/developers/gitignore/api/fsharp
+# Edit at https://www.toptal.com/developers/gitignore?templates=fsharp
+
+### fsharp ###
+lib/debug
+lib/release
+Debug
+*.suo
+*.user
+obj
+bin
+/build/
+*.exe
+!.paket/paket.bootstrapper.exe
+.ionide/
+.fake
+
+# End of https://www.toptal.com/developers/gitignore/api/fsharp

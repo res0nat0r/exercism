@@ -42,6 +42,7 @@ mkShell {
     elmPackages.elm-test
 
     # fsharp
+    dotnet-sdk_7
     fsharp
 
     # haskell
