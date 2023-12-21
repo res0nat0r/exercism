@@ -59,7 +59,9 @@ mkShell {
     julia
 
     # lua
+    lua52Packages.busted
     lua
+    luarocks
 
     # python
     jupyter
