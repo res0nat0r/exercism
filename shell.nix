@@ -83,6 +83,8 @@ mkShell {
     # misc
     diff-so-fancy
     exercism
+    just
+    vimPlugins.vim-just
     tig
   ];
 }
