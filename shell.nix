@@ -80,6 +80,9 @@ mkShell {
     # unison
     unison-ucm
 
+    # zig
+    zig
+
     # misc
     diff-so-fancy
     exercism
