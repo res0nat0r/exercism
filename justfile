@@ -3,3 +3,6 @@ default:
 
 crystal:
   cd crystal && crystal spec *
+
+zig:
+  cd zig && zig test */test_*
