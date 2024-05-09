@@ -5,4 +5,4 @@ crystal:
     crystal spec
 
 zig:
-    zig test test_*
+    cd {{invocation_directory()}} && zig test test_*
