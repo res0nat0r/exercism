@@ -1,8 +1,8 @@
 default:
-  @just --list
+    @just --list
 
 crystal:
-  cd crystal && crystal spec *
+    crystal spec
 
 zig:
-  cd zig && zig test */test_*
+    cd {{invocation_directory()}} && zig test test_*
