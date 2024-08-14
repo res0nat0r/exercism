@@ -3,11 +3,12 @@ pub fn steps(number: usize) anyerror!usize {
     var tmp: usize = number;
 
     if (tmp < 1) {
-        return error.DivideByZero;
+        return error.ComputationError;
+//        ComputationError.IllegalArgument` error
     }
 
     while (tmp != 1) {
-        if (tmp / 2 == 0) {
+        if (@mod(tmp, 2) == 0) {
             tmp = tmp / 2;
             counter += 1;
         } else {
@@ -18,3 +19,5 @@ pub fn steps(number: usize) anyerror!usize {
 
     return counter;
 }
+
+
