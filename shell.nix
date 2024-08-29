@@ -54,6 +54,7 @@ mkShell {
 
     # ocaml
     ocaml
+    opam
     dune_3
 
     # julia
