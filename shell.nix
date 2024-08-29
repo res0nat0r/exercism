@@ -59,13 +59,9 @@ mkShell {
     julia
 
     # lua
-<<<<<<< HEAD
-    lua
-=======
     lua52Packages.busted
     lua
     luarocks
->>>>>>> main
 
     # python
     jupyter
@@ -84,11 +80,6 @@ mkShell {
     # unison
     unison-ucm
 
-<<<<<<< HEAD
-    # misc
-    diff-so-fancy
-    exercism
-=======
     # zig
     zig
 
@@ -97,7 +88,6 @@ mkShell {
     exercism
     just
     vimPlugins.vim-just
->>>>>>> main
     tig
   ];
 }
