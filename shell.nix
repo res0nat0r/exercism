@@ -54,6 +54,7 @@ mkShell {
 
     # ocaml
     ocaml
+    opam
     dune_3
 
     # julia
@@ -88,6 +89,7 @@ mkShell {
     diff-so-fancy
     exercism
     just
+    neovim
     vimPlugins.vim-just
     tig
   ];
