@@ -1,5 +1,5 @@
 (ns hello-world)
 
-(defn hello [] 
+(defn hello []
   "Hello, World!"
 )

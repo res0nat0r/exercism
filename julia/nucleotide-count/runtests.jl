@@ -15,7 +15,9 @@ end
 end
 
 @testset "strand with multiple nucleotides" begin
-    @test count_nucleotides("AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC") == Dict('A' => 20, 'C' => 12, 'G' => 17, 'T' => 21)
+    @test count_nucleotides(
+        "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC",
+    ) == Dict('A' => 20, 'C' => 12, 'G' => 17, 'T' => 21)
 end
 
 @testset "strand with invalid nucleotides" begin

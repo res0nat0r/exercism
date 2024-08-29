@@ -3,3 +3,9 @@ AllCops:
 
 Style/Documentation:
   Enabled: false
+
+Naming/PredicateName:
+  Enabled: false
+
+Style/CaseEquality:
+  Enabled: false
