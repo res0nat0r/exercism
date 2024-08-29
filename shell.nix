@@ -1,4 +1,4 @@
-with (import (fetchTarball https://github.com/NixOS/nixpkgs/archive/1697b7d48044.tar.gz) { }); # unstable
+with (import (fetchTarball https://github.com/NixOS/nixpkgs/archive/3281bec.tar.gz) { }); # unstable
 
 let
   pythonEnv = python310.withPackages (ps: [
@@ -59,7 +59,13 @@ mkShell {
     julia
 
     # lua
+<<<<<<< HEAD
     lua
+=======
+    lua52Packages.busted
+    lua
+    luarocks
+>>>>>>> main
 
     # python
     jupyter
@@ -78,9 +84,20 @@ mkShell {
     # unison
     unison-ucm
 
+<<<<<<< HEAD
     # misc
     diff-so-fancy
     exercism
+=======
+    # zig
+    zig
+
+    # misc
+    diff-so-fancy
+    exercism
+    just
+    vimPlugins.vim-just
+>>>>>>> main
     tig
   ];
 }
