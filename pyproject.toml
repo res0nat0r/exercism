@@ -1,0 +1,14 @@
+[project]
+name = "exercism"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "ipython>=8.30.0",
+    "jupyterlab>=4.3.4",
+    "pytest>=6.2.5",
+]
