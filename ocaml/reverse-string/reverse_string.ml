@@ -1,2 +1,4 @@
-let reverse_string _ =
-    failwith "'reverse_string' is missing"
+open Base
+
+let reverse_string s =
+    String.rev s
