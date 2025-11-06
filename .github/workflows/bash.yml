@@ -1,0 +1,75 @@
+name: bash
+
+on:
+  push:
+    paths:
+      - 'bash/**'
+    branches:
+      - main
+  pull_request:
+    paths:
+      - 'bash/**'
+
+jobs:
+  bats:
+    runs-on: ubuntu-20.04
+    env:
+      BATS_RUN_SKIPPED: true
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: changed-files
+        id: changed-files
+        uses: tj-actions/changed-files@v38.2.1
+        with:
+          files: bash/**/*.sh
+          dir_names: true
+
+      - name: setup-bats
+        uses: mig4/setup-bats@v1
+        with:
+          bats-version: 1.2.0
+
+      - name: bats
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: |
+          for dir in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            cd $dir && bats -r . && cd -
+          done
+
+  shellcheck:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: changed-files
+        id: changed-files
+        uses: tj-actions/changed-files@v38.2.1
+        with:
+          files: bash/**/*.sh
+          dir_names: true
+
+      - name: shellcheck
+        uses: ludeeus/action-shellcheck@2.0.0
+        with:
+          ignore_paths: '*.bats *.bash'
+          scandir: ${{ steps.changed-files.outputs.all_changed_files }}
+
+  shfmt:
+      runs-on: ubuntu-20.04
+      steps:
+        - name: checkout
+          uses: actions/checkout@v2
+
+        - name: changed-files
+          id: changed-files
+          uses: tj-actions/changed-files@v38.2.1
+          with:
+            files: bash/**/*.sh
+
+        - name: shfmt
+          uses: collin-miller/shfmt-action@v1
+          with:
+            args: -d ${{ steps.changed-files.outputs.all_changed_files }}
