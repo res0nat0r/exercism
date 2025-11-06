@@ -8,12 +8,9 @@ nucleotideCounts :: String -> Either String (Map Nucleotide Int)
 nucleotideCounts = error "todo"
 
 count [] _ = 0
-count (x:xs) c
-  | elem c x =  1 + count xs c
-  | otherwise = count xs c
-
-
-
+count (x : xs) c
+    | elem c x = 1 + count xs c
+    | otherwise = count xs c
 
 {-
 nucleotideCounts "GGGGGGGG" `matchesMap` [ (A, 0)
@@ -21,7 +18,6 @@ nucleotideCounts "GGGGGGGG" `matchesMap` [ (A, 0)
                                          , (G, 8)
                                          , (T, 0) ]
 -}
-
 
 toRNA :: String -> Either Char String
 toRNA = traverse dna
