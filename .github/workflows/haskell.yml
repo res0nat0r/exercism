@@ -37,4 +37,6 @@ jobs:
           ghc-version: 9.6.7
           enable-stack: true
           stack-version: 3.3.1
-      - run: stack test
+      - run:  |
+          cd "haskell/$(git diff --name-only HEAD^1 HEAD | awk -F/ '{print $2}')"
+          stack test
