@@ -14,10 +14,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: haskell-actions/setup@v2
-      with:
-        ghc-version: 9.0.2
-        enable-stack: true
-        stack-version: 2.7.5
-    - run: stack test
+      - uses: actions/checkout@v3
+      - uses: haskell-actions/setup@v2
+        with:
+          ghc-version: 9.0.2
+          enable-stack: true
+          stack-version: 2.7.5
+      - run: stack test
