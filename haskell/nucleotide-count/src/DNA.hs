@@ -9,7 +9,7 @@ nucleotideCounts = error "todo"
 
 count [] _ = 0
 count (x : xs) c
-    | elem c x = 1 + count xs c
+    | c `elem` x = 1 + count xs c
     | otherwise = count xs c
 
 {-
