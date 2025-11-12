@@ -11,7 +11,14 @@ count x xs = length $ filter (== x) xs
 
 
 nucleotideCounts :: String -> Either String (Map Nucleotide Int)
-nucleotideCounts = error "todo"
+nucleotideCounts = traverse n 
+  where
+    ('G', count 'G' n) = Right 'G'
+    ('C', count 'C' n) = Right 'C'
+    ('T', count 'T' n) = Right 'T'
+    ('A', count 'A' n) = Right 'A'
+    
+    
 
 
 
