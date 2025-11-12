@@ -7,17 +7,15 @@ data Nucleotide = A | C | G | T deriving (Eq, Ord, Show)
 nucleotideCounts :: String -> Either String (Map Nucleotide Int)
 nucleotideCounts = error "todo"
 
-count [] _ = 0
-count (x : xs) c
-    | c `elem` x = 1 + count xs c
-    | otherwise = count xs c
+count :: Char -> String -> Int
+count x xs = length $ filter (== x) xs
 
-{-
-nucleotideCounts "GGGGGGGG" `matchesMap` [ (A, 0)
-                                         , (C, 0)
-                                         , (G, 8)
-                                         , (T, 0) ]
--}
+
+
+
+
+
+
 
 toRNA :: String -> Either Char String
 toRNA = traverse dna
