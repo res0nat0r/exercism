@@ -2,7 +2,7 @@ default:
     @just --list
 
 elixir:
-  for dir in $(ls elixir);do cd "elixir/$dir"; mix test; cd -; done
+  for dir in $(ls elixir);do cd "elixir/$dir"; mix test; mix format; cd -; done
 
 crystal:
     crystal spec crystal/*
