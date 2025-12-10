@@ -1,6 +1,7 @@
 module DNA (nucleotideCounts, Nucleotide (..)) where
 
-import Data.Map (Map)
+import Data.Map (Map, fromList)
+import Data.Bits (Bits(xor))
 
 data Nucleotide = A | C | G | T deriving (Eq, Ord, Show)
 
@@ -14,9 +15,17 @@ count x xs = case x of
   G -> count' 'G' xs
   T -> count' 'T' xs 
 
-nucleotideCounts :: String -> Either String (Map Nucleotide Int)
-nucleotideCounts = error "fixme"
 
+--nucleotideCounts :: String -> Either String (Map Nucleotide Int)
+nucleotideCounts :: String -> (Map Nucleotide Int)
+nucleotideCounts xs = 
+  fromList [ (A, count A xs), (C, count C xs), (G, count G xs), (T, count T xs) ]
+
+
+-- nucleotideCounts :: String -> Either String (Map Nucleotide Int)
+-- nucleotideCounts = error "fixme"
+
+--main = print $ nucleotideCounts A "GATTACA"
 
 -- "GATTACA" -> 'A': 3, 'C': 1, 'G': 1, 'T': 2
 -- "INVALID" -> error
