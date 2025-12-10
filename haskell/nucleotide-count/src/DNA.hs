@@ -4,19 +4,31 @@ import Data.Map (Map)
 
 data Nucleotide = A | C | G | T deriving (Eq, Ord, Show)
 
-count :: Char -> String -> Int
-count x xs = length $ filter (== x) xs
+count' :: Char -> String -> Int
+count' x xs = length $ filter (== x) xs
 
-
-
+count :: Nucleotide -> String -> Int
+count x xs = case x of
+  A -> count' 'A' xs
+  C -> count' 'C' xs
+  G -> count' 'G' xs
+  T -> count' 'T' xs 
 
 nucleotideCounts :: String -> Either String (Map Nucleotide Int)
-nucleotideCounts = traverse n 
-  where
-    ('G', count 'G' n) = Right 'G'
-    ('C', count 'C' n) = Right 'C'
-    ('T', count 'T' n) = Right 'T'
-    ('A', count 'A' n) = Right 'A'
+nucleotideCounts = error "fixme"
+
+
+-- "GATTACA" -> 'A': 3, 'C': 1, 'G': 1, 'T': 2
+-- "INVALID" -> error
+
+
+-- nucleotideCounts :: String -> Either String (Map Nucleotide Int)
+-- nucleotideCounts = traverse n 
+--   where
+--     ('G', count 'G' n) = Right 'G'
+--     ('C', count 'C' n) = Right 'C'
+--     ('T', count 'T' n) = Right 'T'
+--     ('A', count 'A' n) = Right 'A'
     
     
 
@@ -25,11 +37,11 @@ nucleotideCounts = traverse n
 
 
 
-toRNA :: String -> Either Char String
-toRNA = traverse dna
-  where
-    dna 'G' = Right 'C'
-    dna 'C' = Right 'G'
-    dna 'T' = Right 'A'
-    dna 'A' = Right 'U'
-    dna x = Left x
+-- toRNA :: String -> Either Char String
+-- toRNA = traverse dna
+--   where
+--     dna 'G' = Right 'C'
+--     dna 'C' = Right 'G'
+--     dna 'T' = Right 'A'
+--     dna 'A' = Right 'U'
+--     dna x = Left x
