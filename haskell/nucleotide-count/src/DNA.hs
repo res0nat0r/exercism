@@ -1,19 +1,21 @@
 module DNA (nucleotideCounts, Nucleotide (..)) where
 
 import Data.Map (Map, fromList)
-import Data.Bits (Bits(xor))
 
 data Nucleotide = A | C | G | T deriving (Eq, Ord, Show)
 
-count' :: Char -> String -> Int
-count' x xs = length $ filter (== x) xs
+-- count' :: Char -> String -> Int
+-- count' x xs = length $ filter (== x) xs
 
-count :: Nucleotide -> String -> Int
+
+--count :: Nucleotide -> String -> Int
+count :: Nucleotide -> String -> Either String (Map Nucleotide Int)
 count x xs = case x of
   A -> count' 'A' xs
   C -> count' 'C' xs
   G -> count' 'G' xs
   T -> count' 'T' xs 
+  _ -> Left "error"
 
 
 --nucleotideCounts :: String -> Either String (Map Nucleotide Int)
