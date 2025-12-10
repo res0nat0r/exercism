@@ -11,5 +11,8 @@ crystal:
 elixir:
     for dir in $(ls elixir);do cd "elixir/$dir"; mix test; mix format; cd -; done
 
+r:
+    for dir in $(ls r); do cd "r/$dir"; Rscript test_*.R; cd -; done
+
 zig:
     cd {{invocation_directory()}} && zig test test_*
