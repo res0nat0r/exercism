@@ -11,5 +11,8 @@ crystal:
 elixir:
     for dir in $(ls elixir);do cd "elixir/$dir"; mix test; mix format; cd -; done
 
+ocaml:
+    for dir in $(ls ocaml);do cd "ocaml/$dir"; dune test; cd -; done
+
 zig:
     cd {{invocation_directory()}} && zig test test_*
