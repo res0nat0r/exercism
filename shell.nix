@@ -1,4 +1,4 @@
-with (import (fetchTarball https://github.com/NixOS/nixpkgs/archive/1697b7d48044.tar.gz) { }); # unstable
+with (import (fetchTarball https://github.com/NixOS/nixpkgs/archive/3281bec.tar.gz) { }); # unstable
 
 let
   pythonEnv = python310.withPackages (ps: [
@@ -41,6 +41,10 @@ mkShell {
     elmPackages.elm-review
     elmPackages.elm-test
 
+    # fsharp
+    dotnet-sdk_7
+    fsharp
+
     # haskell
     haskell.compiler.native-bignum.ghc928
     ihaskell
@@ -50,9 +54,16 @@ mkShell {
 
     # ocaml
     ocaml
+    opam
+    dune_3
 
     # julia
     julia
+
+    # lua
+    lua52Packages.busted
+    lua
+    luarocks
 
     # python
     jupyter
@@ -71,9 +82,14 @@ mkShell {
     # unison
     unison-ucm
 
+    # zig
+    zig
+
     # misc
     diff-so-fancy
     exercism
+    just
+    vimPlugins.vim-just
     tig
   ];
 }
